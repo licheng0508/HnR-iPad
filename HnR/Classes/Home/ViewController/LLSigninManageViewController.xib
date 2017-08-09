@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LLSigninManageViewController" customModule="HnR" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="fd_prefersNavigationBarHidden" value="YES"/>
+                <userDefinedRuntimeAttribute type="number" keyPath="fd_interactivePopMaxAllowedInitialDistanceToLeftEdge">
+                    <real key="value" value="0.01"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="collectionView" destination="H8d-hy-giy" id="tjN-UT-oJy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="3EE-kK-Bxv">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3N-nn-dnp">
+                    <rect key="frame" x="945" y="699" width="34" height="34"/>
+                    <state key="normal" image="home_signin_exit"/>
+                    <connections>
+                        <action selector="backBtnClick:" destination="-1" eventType="touchUpInside" id="PF9-lb-e6Q"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydy-Ee-NIO">
+                    <rect key="frame" x="945" y="35" width="34" height="34"/>
+                    <state key="normal" image="home_signin_refresh"/>
+                    <connections>
+                        <action selector="refreshBtnClick:" destination="-1" eventType="touchUpInside" id="qSI-sD-pBr"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自助签到" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UW-7I-qhD">
+                    <rect key="frame" x="441.5" y="85" width="141.5" height="42"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="H8d-hy-giy">
+                    <rect key="frame" x="0.0" y="137" width="1024" height="550"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="44" minimumInteritemSpacing="44" id="HyV-Rj-dOB">
+                        <size key="itemSize" width="201" height="201"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="44" minY="60" maxX="44" maxY="60"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="4AU-qd-JAk"/>
+                        <outlet property="delegate" destination="-1" id="H8A-yL-9EA"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="H8d-hy-giy" secondAttribute="trailing" id="08E-1Q-ug3"/>
+                <constraint firstItem="Ydy-Ee-NIO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="4i0-sh-e5r"/>
+                <constraint firstItem="1UW-7I-qhD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="Bmb-Ia-yPc"/>
+                <constraint firstItem="H8d-hy-giy" firstAttribute="top" secondItem="1UW-7I-qhD" secondAttribute="bottom" constant="10" id="Ezi-Mu-Whu"/>
+                <constraint firstItem="R3N-nn-dnp" firstAttribute="top" secondItem="H8d-hy-giy" secondAttribute="bottom" constant="12" id="FKn-oY-2YV"/>
+                <constraint firstItem="3EE-kK-Bxv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="I0C-00-zwO"/>
+                <constraint firstItem="1UW-7I-qhD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QcZ-pm-ONd"/>
+                <constraint firstItem="3EE-kK-Bxv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UGQ-Aj-vLa"/>
+                <constraint firstAttribute="trailing" secondItem="Ydy-Ee-NIO" secondAttribute="trailing" constant="45" id="YYZ-Ve-890"/>
+                <constraint firstAttribute="bottom" secondItem="R3N-nn-dnp" secondAttribute="bottom" constant="35" id="Zal-CW-QYt"/>
+                <constraint firstItem="H8d-hy-giy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cwT-su-gCF"/>
+                <constraint firstAttribute="trailing" secondItem="3EE-kK-Bxv" secondAttribute="trailing" id="j8Z-0L-7lZ"/>
+                <constraint firstAttribute="trailing" secondItem="R3N-nn-dnp" secondAttribute="trailing" constant="45" id="qMi-7J-tRX"/>
+                <constraint firstAttribute="bottom" secondItem="3EE-kK-Bxv" secondAttribute="bottom" id="tq7-Vk-NAw"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-433" y="-490"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_signin_exit" width="34" height="34"/>
+        <image name="home_signin_refresh" width="34" height="34"/>
+        <image name="user_login_bg" width="1366" height="1024"/>
+    </resources>
+</document>

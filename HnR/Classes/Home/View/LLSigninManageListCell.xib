@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LLSigninManageListCell" id="gTV-IL-0wX" customClass="LLSigninManageListCell" customModule="HnR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="201" height="201"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="201" height="201"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1P4-jB-EAV">
+                        <rect key="frame" x="50.5" y="26" width="100" height="100"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="2zC-XV-Ge3"/>
+                            <constraint firstAttribute="width" constant="100" id="8P6-kX-WqY"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="50"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小朋友" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EA2-bN-lJQ">
+                        <rect key="frame" x="10" y="150" width="181" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_signin_check" translatesAutoresizingMaskIntoConstraints="NO" id="2SA-tP-me2">
+                        <rect key="frame" x="136" y="0.0" width="65" height="65"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="EA2-bN-lJQ" firstAttribute="top" secondItem="1P4-jB-EAV" secondAttribute="bottom" constant="24" id="4fb-eU-OwK"/>
+                <constraint firstItem="1P4-jB-EAV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="26" id="G4R-kE-wyI"/>
+                <constraint firstAttribute="trailing" secondItem="EA2-bN-lJQ" secondAttribute="trailing" constant="10" id="iIU-eq-LgL"/>
+                <constraint firstItem="2SA-tP-me2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iY9-h4-oHk"/>
+                <constraint firstItem="1P4-jB-EAV" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="jTf-kQ-JUN"/>
+                <constraint firstItem="EA2-bN-lJQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="lZS-Fa-bHm"/>
+                <constraint firstAttribute="trailing" secondItem="2SA-tP-me2" secondAttribute="trailing" id="xt6-t2-evu"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="checkIcon" destination="2SA-tP-me2" id="ZxB-i8-IWB"/>
+                <outlet property="headImageView" destination="1P4-jB-EAV" id="Hqb-Xu-kP9"/>
+                <outlet property="nameLabel" destination="EA2-bN-lJQ" id="SrX-a8-LTC"/>
+            </connections>
+            <point key="canvasLocation" x="-67" y="60"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="home_signin_check" width="65" height="65"/>
+    </resources>
+</document>

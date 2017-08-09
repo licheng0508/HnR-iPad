@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LLSigninManageCourseCell" id="gTV-IL-0wX" customClass="LLSigninManageCourseCell" customModule="HnR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="105"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="105"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="课程名称：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-4j-jeS">
+                        <rect key="frame" x="10" y="0.0" width="380" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="NtH-4m-ooh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <color key="textColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上课时间：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwD-m3-TlT">
+                        <rect key="frame" x="10" y="40" width="380" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="nfS-RX-OCb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上课区域：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrX-56-uca">
+                        <rect key="frame" x="10" y="80" width="380" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="QKQ-f7-HeE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="YrX-56-uca" firstAttribute="top" secondItem="jwD-m3-TlT" secondAttribute="bottom" constant="15" id="6Is-DF-thI"/>
+                <constraint firstItem="jwD-m3-TlT" firstAttribute="top" secondItem="lAf-4j-jeS" secondAttribute="bottom" constant="15" id="9iK-Mz-9be"/>
+                <constraint firstItem="lAf-4j-jeS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Akx-A1-a7x"/>
+                <constraint firstAttribute="trailing" secondItem="lAf-4j-jeS" secondAttribute="trailing" constant="10" id="UR1-LJ-hsL"/>
+                <constraint firstItem="YrX-56-uca" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Xna-HC-gl7"/>
+                <constraint firstItem="jwD-m3-TlT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="bXg-2N-Uu8"/>
+                <constraint firstAttribute="trailing" secondItem="jwD-m3-TlT" secondAttribute="trailing" constant="10" id="hhT-0F-qoE"/>
+                <constraint firstItem="lAf-4j-jeS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="vIN-sk-Yy8"/>
+                <constraint firstAttribute="trailing" secondItem="YrX-56-uca" secondAttribute="trailing" constant="10" id="xGE-qo-TmI"/>
+            </constraints>
+            <size key="customSize" width="143" height="188"/>
+            <connections>
+                <outlet property="areaLabel" destination="YrX-56-uca" id="JG0-uW-UjG"/>
+                <outlet property="courseNameLabel" destination="lAf-4j-jeS" id="F5u-zl-B6K"/>
+                <outlet property="timeLabel" destination="jwD-m3-TlT" id="jiQ-cT-XU4"/>
+            </connections>
+            <point key="canvasLocation" x="-84" y="-24.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LLHomeViewController" customModule="HnR" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="fd_prefersNavigationBarHidden" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="collectionView" destination="LLI-wd-8vK" id="yuy-M3-KPM"/>
+                <outlet property="headImageView" destination="oWQ-Al-uYI" id="NkR-uK-Q6n"/>
+                <outlet property="shopNameLabel" destination="OKZ-Oe-m61" id="Kgl-Dz-REu"/>
+                <outlet property="view" destination="yHn-pb-md1" id="IHm-Cx-GMn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="yHn-pb-md1">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_index_bg" translatesAutoresizingMaskIntoConstraints="NO" id="oWQ-Al-uYI">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="260"/>
+                    <color key="backgroundColor" red="0.45098039215686275" green="0.85098039215686272" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="260" id="l8F-bB-yrA"/>
+                    </constraints>
+                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LLI-wd-8vK">
+                    <rect key="frame" x="0.0" y="260" width="1024" height="508"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="44" minimumInteritemSpacing="44" id="fdB-rd-Wvc">
+                        <size key="itemSize" width="201" height="165"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="44" minY="44" maxX="44" maxY="44"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="kt1-s5-7Q9"/>
+                        <outlet property="delegate" destination="-1" id="FuL-yJ-1DG"/>
+                    </connections>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里是店名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKZ-Oe-m61">
+                    <rect key="frame" x="44" y="50" width="176.5" height="42"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="LLI-wd-8vK" secondAttribute="bottom" id="7wH-yk-I3j"/>
+                <constraint firstAttribute="trailing" secondItem="LLI-wd-8vK" secondAttribute="trailing" id="NDU-cO-hts"/>
+                <constraint firstItem="OKZ-Oe-m61" firstAttribute="leading" secondItem="yHn-pb-md1" secondAttribute="leading" constant="44" id="ONU-wS-uh9"/>
+                <constraint firstItem="oWQ-Al-uYI" firstAttribute="leading" secondItem="yHn-pb-md1" secondAttribute="leading" id="Pcd-mT-HXi"/>
+                <constraint firstItem="LLI-wd-8vK" firstAttribute="top" secondItem="oWQ-Al-uYI" secondAttribute="bottom" id="XQZ-ng-ZKG"/>
+                <constraint firstItem="LLI-wd-8vK" firstAttribute="leading" secondItem="yHn-pb-md1" secondAttribute="leading" id="YR2-cS-vy8"/>
+                <constraint firstAttribute="trailing" secondItem="oWQ-Al-uYI" secondAttribute="trailing" id="cfu-CP-z81"/>
+                <constraint firstItem="oWQ-Al-uYI" firstAttribute="top" secondItem="yHn-pb-md1" secondAttribute="top" id="fb0-XW-bt7"/>
+                <constraint firstItem="OKZ-Oe-m61" firstAttribute="top" secondItem="yHn-pb-md1" secondAttribute="top" constant="50" id="kWO-Mx-TJI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-586" y="-738"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_index_bg" width="1024" height="260"/>
+    </resources>
+</document>
