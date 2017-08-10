@@ -17,6 +17,8 @@ class LLUserLoginViewController: UIViewController {
     @IBOutlet weak var phoneText: UITextField!
     /// 验证码输入框
     @IBOutlet weak var codeText: UITextField!
+    /// 验证码view
+    @IBOutlet weak var codeView: UIView!
     
     var timer: Timer?
     var codeTime = 60
@@ -27,6 +29,15 @@ class LLUserLoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //监听键盘事件
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(note:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHidden(note:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+    }
+    // 界面消失
+    deinit {
+        // 移除通知
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -58,6 +69,8 @@ class LLUserLoginViewController: UIViewController {
     /// 获取验证码
     @IBAction func getSmSCodeClick(_ sender: UIButton) {
         
+        //点击收起键盘
+        self.view.endEditing(true)
         getUserLoginCodeData()
         
     }
@@ -150,6 +163,8 @@ class LLUserLoginViewController: UIViewController {
         
     }
     
+    // MARK: - 公共方法
+    
     /// 计时器
     func codeTimer() {
         
@@ -166,4 +181,48 @@ class LLUserLoginViewController: UIViewController {
             smsCodeBtn.isEnabled = false
         }
     }
+    
+    // 键盘出现
+    func keyboardWillShow(note: NSNotification) {
+        let userInfo = note.userInfo!
+        let  keyBoardBounds = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        
+        let deltaY = getMainScreenHeight() - keyBoardBounds.size.height
+        let transY = (deltaY - codeView.frame.maxY) > 0 ? 0 : (deltaY - codeView.frame.maxY - 5)
+        
+        
+        let animations:(() -> Void) = {
+            //键盘的偏移量
+            self.view.transform = CGAffineTransform(translationX: 0 , y: transY)
+        }
+        if duration > 0 {
+            let options = UIViewAnimationOptions(rawValue: UInt((userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).intValue << 16))
+            
+            UIView.animate(withDuration: duration, delay: 0, options:options, animations: animations, completion: nil)
+            
+        }else{
+            animations()
+        }
+    }
+    
+    // 键盘隐藏
+    func keyboardWillHidden(note: NSNotification) {
+        
+        let userInfo  = note.userInfo!
+        let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        
+        let animations:(() -> Void) = {
+            //键盘的偏移量
+            self.view.transform = CGAffineTransform.identity
+        }
+        if duration > 0 {
+            let options = UIViewAnimationOptions(rawValue: UInt((userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).intValue << 16))
+            
+            UIView.animate(withDuration: duration, delay: 0, options:options, animations: animations, completion: nil)
+        }else{
+            animations()
+        }
+    }
+
 }

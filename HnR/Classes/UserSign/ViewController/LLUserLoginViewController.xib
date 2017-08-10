@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LLUserLoginViewController" customModule="HnR" customModuleProvider="target">
             <connections>
                 <outlet property="codeText" destination="BHt-xA-9ev" id="r8Q-dB-vKD"/>
+                <outlet property="codeView" destination="DiY-x9-bRT" id="PoW-Qe-WhV"/>
                 <outlet property="phoneText" destination="sCG-Q2-RlZ" id="RwI-Pm-f11"/>
                 <outlet property="smsCodeBtn" destination="EZA-Wl-tuL" id="b1h-1k-SnB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
