@@ -1075,8 +1075,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopenrising.hnrpad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "58d8b331-93ed-4517-ba33-d21aad26315d";
-				PROVISIONING_PROFILE_SPECIFIER = HnRiPad_licheng_distribution;
+				PROVISIONING_PROFILE = "7c3c789a-9d3a-4fba-b7fc-318cd124a87e";
+				PROVISIONING_PROFILE_SPECIFIER = "HnRiPad_licheng_AdHoc_ distribution";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/HnR/Classes/Other/Tool/HnR-Briding-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
