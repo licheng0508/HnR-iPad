@@ -45,6 +45,8 @@ class LLHomeViewController: UIViewController {
         
         // 获取数据
         getHomeData()
+        
+        LLPrint("测试数据")
     }
     
     override func didReceiveMemoryWarning() {
