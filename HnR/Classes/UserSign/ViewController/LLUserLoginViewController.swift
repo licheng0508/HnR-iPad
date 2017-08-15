@@ -102,9 +102,6 @@ class LLUserLoginViewController: UIViewController {
             return
         }
         
-        //加载框
-        MBProgressHUDShowNetWorkLoading("登录中...")
-        
         let paramsDic = ["username" : phoneNum,
                          "smsCode" : codeNum
         ]
@@ -138,8 +135,6 @@ class LLUserLoginViewController: UIViewController {
             MBProgressHUDShowText("请输入正确的手机号")
             return
         }
-        //加载框
-        MBProgressHUDShowNetWorkLoading()
         
         let paramsDic = ["phone": phoneNum,
                          "type" : "12"

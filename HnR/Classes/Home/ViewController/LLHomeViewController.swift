@@ -57,10 +57,7 @@ class LLHomeViewController: UIViewController {
     
     /// 获取首页数据
     private func getHomeData(){
-        
-        // 网络加载框
-        MBProgressHUDShowNetWorkLoading()
-        
+                
         let paramsDic = ["userId" : UserAccount.getUserAccountUserId()]
         
         HnRNetWorkTool.getHomeListData(parameters: paramsDic) { (result) in

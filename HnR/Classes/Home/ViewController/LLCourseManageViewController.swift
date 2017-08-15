@@ -127,8 +127,6 @@ class LLCourseManageViewController: UIViewController {
             return
         }
         
-        MBProgressHUDShowNetWorkLoading()
-        
         let paramsDic = ["userId" : UserAccount.getUserAccountUserId(),
                          "courseId": courseId,
                          "signType": signType,

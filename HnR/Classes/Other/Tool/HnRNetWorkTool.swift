@@ -15,7 +15,7 @@ class HnRNetWorkTool {
         
         let urlStr = "chain/user/login"
         
-        ALFTool.postRequestData(hubtype: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
+        ALFTool.postRequestData(hubtype: true, isloading: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
             
             if let result = LLUserLoginModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 
@@ -29,7 +29,7 @@ class HnRNetWorkTool {
         
         let urlStr = "user/sms"
         
-        ALFTool.postRequestData(hubtype: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
+        ALFTool.postRequestData(hubtype: true, isloading: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
             
             if let result = LLUserLoginSmSModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 
@@ -43,7 +43,7 @@ class HnRNetWorkTool {
         
         let urlStr = "chain/lattice/list"
         
-        ALFTool.postRequestData(hubtype: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
+        ALFTool.postRequestData(hubtype: true, isloading: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
             
             if let result = LLHomeListModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 
@@ -72,7 +72,7 @@ class HnRNetWorkTool {
         
         let urlStr = "chain/sign"
         
-        ALFTool.postRequestData(hubtype: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
+        ALFTool.postRequestData(hubtype: true, isloading: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
             
             if let result = LLSignWayModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 
@@ -86,7 +86,7 @@ class HnRNetWorkTool {
         
         let urlStr = "chain/sign/out"
         
-        ALFTool.postRequestData(hubtype: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
+        ALFTool.postRequestData(hubtype: true, isloading: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
             
             if let result = LLSignWayModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 
@@ -100,7 +100,7 @@ class HnRNetWorkTool {
         
         let urlStr = "chain/user/password/validate"
         
-        ALFTool.postRequestData(hubtype: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
+        ALFTool.postRequestData(hubtype: true, isloading: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
             
             if let result = LLSignWayModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 

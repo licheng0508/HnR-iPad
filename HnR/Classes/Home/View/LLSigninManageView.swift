@@ -99,9 +99,6 @@ class LLSigninManageView: UIView {
     /// 签到
     private func getSigninData() {
         
-        // 加载中
-        MBProgressHUDShowNetWorkLoading()
-        
         var userCourseIds: [String] = []
         if let courseList = model?.courseList {
             for courseModel: LLCourseListModel in courseList{

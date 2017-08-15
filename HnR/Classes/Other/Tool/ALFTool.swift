@@ -17,7 +17,7 @@ enum MethodType {
 class ALFTool {
     
     /// 请求数据方法
-    class func requestData(_ type : MethodType, hubtype : Bool? = false, urlstring : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : HnRBaseModel) -> ()) {
+    class func requestData(_ type : MethodType, hubtype : Bool? = false, isloading : Bool? = false, urlstring : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : HnRBaseModel) -> ()) {
         
         //0.拼接接口
         let urlStr = Base_URL + urlstring
@@ -31,7 +31,9 @@ class ALFTool {
         if parameters != nil {
             parameDic = ["object" : parameters!]
         }
-        
+        if isloading! {//显示加载网络框
+            LLNetWorkLoadingTool.sharedInstance.loadingStarAnimation()
+        }
         //3.发送网络请求
         Alamofire.request(urlStr, method: method, parameters: parameDic, encoding: JSONEncoding.default).responseJSON { (response) in
             
@@ -39,7 +41,7 @@ class ALFTool {
             guard let result = response.result.value else {
                 
                 //隐藏网络请求弹框
-                MBProgressHUDHide()
+                LLNetWorkLoadingTool.sharedInstance.loadingStopAnimation()
                 
                 finishedCallback(HnRBaseModel())
                 LLPrint("获取服务器接口失败")
@@ -49,7 +51,7 @@ class ALFTool {
 //            LLPrint("resultJSON == \(JSON(result))")
             
             //隐藏网络请求弹框
-            MBProgressHUDHide()
+            LLNetWorkLoadingTool.sharedInstance.loadingStopAnimation()
             
             //5.将结果回调出去
             if let JsonModel = HnRBaseModel.deserialize(from: JSON(result).rawString()){
@@ -75,9 +77,9 @@ class ALFTool {
     }
     
     /// post方法
-    class func postRequestData(hubtype : Bool? = false, urlstring : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : HnRBaseModel) -> ()) {
+    class func postRequestData(hubtype : Bool? = false, isloading : Bool? = false, urlstring : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : HnRBaseModel) -> ()) {
         
-        self.requestData(.post, hubtype: hubtype, urlstring: urlstring, parameters: parameters) { (response) in
+        self.requestData(.post, hubtype: hubtype, isloading: isloading, urlstring: urlstring, parameters: parameters) { (response) in
             finishedCallback(response)
         }
     }

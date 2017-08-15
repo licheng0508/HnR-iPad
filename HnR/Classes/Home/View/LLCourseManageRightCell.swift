@@ -114,10 +114,7 @@ class LLCourseManageRightCell: UITableViewCell {
     // MARK: - 私有方法
     /// 签出
     private func getSignOutData() {
-        
-        // 加载中
-        MBProgressHUDShowNetWorkLoading()
-        
+                
         guard let childId = model?.childId, let startTime = model?.startTime else {
             return
         }

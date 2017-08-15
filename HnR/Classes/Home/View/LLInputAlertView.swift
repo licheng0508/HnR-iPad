@@ -122,8 +122,6 @@ class LLInputAlertView: UIView {
     /// 校验密码接口
     private func getExitCurrentViewData(passWord: String) {
         
-        // 加载中
-        MBProgressHUDShowNetWorkLoading()
         
         let paramsDic = ["userId": UserAccount.getUserAccountUserId(),
                          "password": passWord
@@ -145,10 +143,7 @@ class LLInputAlertView: UIView {
     
     // 取消签到
     private func getSignCancelData() {
-        
-        // 加载中
-        MBProgressHUDShowNetWorkLoading()
-        
+                
         var userCourseIds: [String] = []
         
         if let courseList = model?.courseList {
@@ -173,9 +168,6 @@ class LLInputAlertView: UIView {
     
     // 取消签出
     private func getSignOutCancelData() {
-        
-        // 加载中
-        MBProgressHUDShowNetWorkLoading()
         
         guard let childId = courseModel?.childId, let startTime = courseModel?.startTime else {
             return
