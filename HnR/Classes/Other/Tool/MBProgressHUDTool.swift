@@ -11,7 +11,6 @@ import UIKit
 // MARK: - 私有方法/变量
 
 private let view = UIApplication.shared.keyWindow
-private var activityIndicatorView: NVActivityIndicatorView!
 
 /// 初始化
 private func setupMBProgressHUD(message: String?, mode: MBProgressHUDMode) {
@@ -45,19 +44,6 @@ private func setupDetailsLabel(hub: MBProgressHUD, message: String?) {
     
 }
 
-private func setupNetWorkLoading() {
-    
-    if let view = view {
-        
-        activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40),
-                                                            type: NVActivityIndicatorType.lineScale,
-                                                            color: UIColor.darkGray)
-        activityIndicatorView.center = view.center
-        view.addSubview(activityIndicatorView)
-        activityIndicatorView.startAnimating()
-    }
-}
-
 // MARK: - 外部控制方法
 
 /// 文本弹框
@@ -73,7 +59,6 @@ func MBProgressHUDShowNetWorkLoading(_ message: String? = "加载中...") {
     
     setupMBProgressHUD(message: message, mode: .indeterminate)
     
-//    setupNetWorkLoading()
 }
 
 /// 隐藏HUB
@@ -81,6 +66,5 @@ func MBProgressHUDHide() {
     
     if let view = view {
         MBProgressHUD.hide(for: view, animated: true)
-//        activityIndicatorView.stopAnimating()
     }
 }
