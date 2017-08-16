@@ -99,6 +99,8 @@
 		5AABB0011F25D4230045B622 /* ALFTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AABB0001F25D4230045B622 /* ALFTool.swift */; };
 		5AABB0031F25D4590045B622 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AABB0021F25D4590045B622 /* Common.swift */; };
 		5AABB02A1F25E9E80045B622 /* HnRNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AABB0291F25E9E80045B622 /* HnRNetWorkTool.swift */; };
+		5AB6E89B1F44414C00A9272F /* LLSigninManageSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6E89A1F44414C00A9272F /* LLSigninManageSuccessView.swift */; };
+		5AB6E8A41F44416200A9272F /* LLSigninManageSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6E8A31F44416200A9272F /* LLSigninManageSuccessView.xib */; };
 		5AE4CA8D1F3073830088B671 /* LLMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA8C1F3073830088B671 /* LLMaskView.swift */; };
 		5AE4CA8F1F3081970088B671 /* LLSigninManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA8E1F3081970088B671 /* LLSigninManageView.swift */; };
 		5AE4CA911F3081A50088B671 /* LLSigninManageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE4CA901F3081A40088B671 /* LLSigninManageView.xib */; };
@@ -345,6 +347,8 @@
 		5AABB0001F25D4230045B622 /* ALFTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALFTool.swift; sourceTree = "<group>"; };
 		5AABB0021F25D4590045B622 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		5AABB0291F25E9E80045B622 /* HnRNetWorkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnRNetWorkTool.swift; sourceTree = "<group>"; };
+		5AB6E89A1F44414C00A9272F /* LLSigninManageSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSigninManageSuccessView.swift; sourceTree = "<group>"; };
+		5AB6E8A31F44416200A9272F /* LLSigninManageSuccessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSigninManageSuccessView.xib; sourceTree = "<group>"; };
 		5AE4CA8C1F3073830088B671 /* LLMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLMaskView.swift; sourceTree = "<group>"; };
 		5AE4CA8E1F3081970088B671 /* LLSigninManageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSigninManageView.swift; sourceTree = "<group>"; };
 		5AE4CA901F3081A40088B671 /* LLSigninManageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSigninManageView.xib; sourceTree = "<group>"; };
@@ -550,6 +554,8 @@
 				5AE4CA901F3081A40088B671 /* LLSigninManageView.xib */,
 				5AE4CA921F31AB0A0088B671 /* LLSigninManageCourseCell.swift */,
 				5AE4CA931F31AB0A0088B671 /* LLSigninManageCourseCell.xib */,
+				5AB6E89A1F44414C00A9272F /* LLSigninManageSuccessView.swift */,
+				5AB6E8A31F44416200A9272F /* LLSigninManageSuccessView.xib */,
 				5AE4CA9A1F32D1DE0088B671 /* LLInputAlertView.swift */,
 				5AE4CA9C1F32D2010088B671 /* LLInputAlertView.xib */,
 				5A0118241F42F2210063C890 /* LLInputCodeAlertView.swift */,
@@ -984,6 +990,7 @@
 				5A6BEE181F2F0B4B00F9FE00 /* LLHomeListCell.xib in Resources */,
 				5AE4CA9D1F32D2010088B671 /* LLInputAlertView.xib in Resources */,
 				5A547C2D1F29DA6A00756132 /* LLUserLoginViewController.xib in Resources */,
+				5AB6E8A41F44416200A9272F /* LLSigninManageSuccessView.xib in Resources */,
 				5A6BEE201F2F305700F9FE00 /* LLSigninManageViewController.xib in Resources */,
 				5A02A39E1F1F3D3700F60AB8 /* Assets.xcassets in Resources */,
 				5A01182E1F42F2310063C890 /* LLInputCodeAlertView.xib in Resources */,
@@ -1006,6 +1013,7 @@
 				5AE4CADB1F3AE76C0088B671 /* Metadata.swift in Sources */,
 				5A6BEEA61F30550B00F9FE00 /* UIView+WebCacheOperation.m in Sources */,
 				5A6BEE9C1F30550B00F9FE00 /* SDWebImageDownloaderOperation.m in Sources */,
+				5AB6E89B1F44414C00A9272F /* LLSigninManageSuccessView.swift in Sources */,
 				5A0117FD1F41A01F0063C890 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				5A6BEEAD1F3056F200F9FE00 /* FLAnimatedImageView.m in Sources */,
 				5AE4CAE01F3AE76C0088B671 /* Properties.swift in Sources */,

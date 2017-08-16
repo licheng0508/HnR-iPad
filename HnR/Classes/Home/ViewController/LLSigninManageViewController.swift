@@ -114,7 +114,8 @@ extension LLSigninManageViewController: UICollectionViewDelegate, UICollectionVi
             if model.isSigned {// 取消签到
                 LLInputAlertView.loadViewFfromNib(delegate: self, viewtype: .viewTypeCancelSignin).model = model
             }else{// 签到
-                LLInputCodeAlertView.loadViewFfromNib(delegate: self).model = model
+//                LLInputCodeAlertView.loadViewFfromNib(delegate: self).model = model
+                _ = LLSigninManageSuccessView.loadViewFfromNib()
             }
         }
     }
@@ -144,7 +145,9 @@ extension LLSigninManageViewController: LLInputCodeAlertViewDelegate
     
     func inputCodeAlertViewSucess(_ view: LLInputCodeAlertView) {
         // 刷新数据
-        getSignListData("签到成功")
+        getSignListData()
+        
+        _ = LLSigninManageSuccessView.loadViewFfromNib()
     }
 }
 

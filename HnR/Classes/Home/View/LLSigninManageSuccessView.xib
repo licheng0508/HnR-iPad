@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LLSigninManageSuccessView" customModule="HnR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="705" height="545"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUi-Y5-WzZ">
+                    <rect key="frame" x="0.0" y="300" width="705" height="245"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="245" id="MGv-mw-6XC"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVa-Ge-kmH">
+                    <rect key="frame" x="292" y="30" width="121.5" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPI-Uq-eu2">
+                    <rect key="frame" x="629" y="35" width="41" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="Cty-ng-WwT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="关闭"/>
+                    <connections>
+                        <action selector="closeBtnClick" destination="iN0-l3-epB" eventType="touchUpInside" id="bf6-zK-day"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_signin_finish" translatesAutoresizingMaskIntoConstraints="NO" id="NFc-Dr-vb8">
+                    <rect key="frame" x="292" y="73" width="121" height="121"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bhg-33-dsc">
+                    <rect key="frame" x="47" y="201" width="611" height="295"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="295" id="DAo-nL-IKy"/>
+                        <constraint firstAttribute="width" constant="611" id="qTl-Ge-dY2"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.80000000000000004"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.4549019608" green="0.85490196080000003" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="NFc-Dr-vb8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1xV-eE-HYR"/>
+                <constraint firstItem="EVa-Ge-kmH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4VJ-5A-ifE"/>
+                <constraint firstAttribute="trailing" secondItem="pPI-Uq-eu2" secondAttribute="trailing" constant="35" id="9Nd-Nh-ANe"/>
+                <constraint firstAttribute="bottom" secondItem="iUi-Y5-WzZ" secondAttribute="bottom" id="OFA-Ws-Epl"/>
+                <constraint firstItem="Bhg-33-dsc" firstAttribute="top" secondItem="NFc-Dr-vb8" secondAttribute="bottom" constant="7" id="YBk-Gb-hHi"/>
+                <constraint firstItem="EVa-Ge-kmH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="Z5C-fs-DsT"/>
+                <constraint firstItem="iUi-Y5-WzZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aVq-7S-bQj"/>
+                <constraint firstAttribute="trailing" secondItem="iUi-Y5-WzZ" secondAttribute="trailing" id="lKJ-4E-fnh"/>
+                <constraint firstItem="pPI-Uq-eu2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="ly3-Mk-YbH"/>
+                <constraint firstItem="NFc-Dr-vb8" firstAttribute="top" secondItem="EVa-Ge-kmH" secondAttribute="bottom" constant="7" id="q5i-Ex-LWT"/>
+                <constraint firstItem="Bhg-33-dsc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qQH-ag-gaT"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="-538" y="-76"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_signin_finish" width="121" height="121"/>
+    </resources>
+</document>

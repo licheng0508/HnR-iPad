@@ -27,9 +27,9 @@ class LLInputCodeView: UIView {
     /// LLInputCodeViewDelegate
     weak var myDelegate: LLInputCodeViewDelegate?
     
-    var password:   String = ""
+    var password: String = ""
     var squareArray = [UILabel]()
-    var textField:  UITextField = UITextField()
+    var textField: UITextField = UITextField()
     
     // MARK: - 重写方法
     
@@ -122,10 +122,6 @@ extension LLInputCodeView: UITextFieldDelegate
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        
-        LLPrint("input string: \(range.location)")
-        
-        
         if !string.isNumber() {
             return false
         }
@@ -143,6 +139,7 @@ extension LLInputCodeView: UITextFieldDelegate
             }else if password.characters.count == 1{
                 password = ""
             }else{
+                
                 password = password.substring(to: password.index(password.startIndex, offsetBy: password.characters.count - 1))
             }
             
