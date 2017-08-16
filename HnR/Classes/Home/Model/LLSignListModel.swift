@@ -37,6 +37,9 @@ class LLSigninModel: HandyJSON {
     /// childId
     var childId: String?
     
+    /// userId
+    var userId: String?
+    
     /// 头像
     var headPortrait: String?
     

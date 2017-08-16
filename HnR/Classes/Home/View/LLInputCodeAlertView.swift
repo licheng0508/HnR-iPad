@@ -24,7 +24,9 @@ class LLInputCodeAlertView: UIView {
     /// 输入框
     @IBOutlet weak var inputCodeView: LLInputCodeView!
     
-
+    /// 数据源
+    var model: LLSigninModel?
+    
     // MARK: - 懒加载
     
     /// maskView
@@ -137,6 +139,37 @@ class LLInputCodeAlertView: UIView {
         }
     }
     
+    /// 签到
+    func getSigninData(password: String) {
+        
+        guard let appUserId = model?.userId else {
+            return
+        }
+        var userCourseIds: [String] = []
+        if let courseList = model?.courseList {
+            for courseModel: LLCourseListModel in courseList{
+                if let userCourseId = courseModel.userCourseId {
+                    userCourseIds.append(userCourseId)
+                }
+            }
+        }
+        let paramsDic = ["userId": UserAccount.getUserAccountUserId(),
+                         "appUserId": appUserId,
+                         "type": "1",
+                         "code": password,
+                         "userCourseIds": userCourseIds
+            ] as [String : Any]
+        
+        HnRNetWorkTool.getUserSignInWayData(parameters: paramsDic) { (result) in
+            
+            if result.status{
+                
+                self.cacelBtnClick()
+                self.myDelegate?.inputCodeAlertViewSucess(self)
+            }
+        }
+    }
+    
     // MARK: - 外部调用方法
     
     /// load view from xib
@@ -165,11 +198,8 @@ extension LLInputCodeAlertView: LLInputCodeViewDelegate
 {
     func inputCodeSuccessView(_ view: LLInputCodeView, password: String) {
         
-        LLPrint(password)
+        // 签到
+        getSigninData(password: password)
         
     }
 }
-
-
-
-

@@ -43,6 +43,11 @@ protocol LLInputCodeViewDelegate: NSObjectProtocol{
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        textField.becomeFirstResponder()
+    }
+    
     // MARK: - 私有方法
 
     /// 初始化控件
@@ -66,7 +71,7 @@ protocol LLInputCodeViewDelegate: NSObjectProtocol{
             squareArray.append(label)
             addSubview(label)
             
-            if index < lenght - 1{
+            if index < lenght - 1 {
                 let spaceView = UIView(frame: CGRect(x: (width + space) * CGFloat(index + 1), y: 0, width: 1, height: height))
                 spaceView.backgroundColor = UIColor.lightGray
                 addSubview(spaceView)
@@ -75,7 +80,6 @@ protocol LLInputCodeViewDelegate: NSObjectProtocol{
         
         textField.keyboardType = .numberPad
         textField.delegate = self
-        textField.becomeFirstResponder()
         addSubview(textField)
     }
 }

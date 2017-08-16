@@ -143,7 +143,10 @@ class LLInputAlertView: UIView {
     
     // 取消签到
     private func getSignCancelData() {
-                
+        
+        guard let appUserId = model?.userId else {
+            return
+        }
         var userCourseIds: [String] = []
         
         if let courseList = model?.courseList {
@@ -154,6 +157,7 @@ class LLInputAlertView: UIView {
             }
         }
         let paramsDic = ["userId": UserAccount.getUserAccountUserId(),
+                         "appUserId": appUserId,
                          "type": viewType.rawValue,
                          "userCourseIds": userCourseIds
             ] as [String : Any]
@@ -224,7 +228,7 @@ class LLInputAlertView: UIView {
         let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
         
         let deltaY = getMainScreenHeight() - keyBoardBounds.size.height
-        let transY = (deltaY - self.frame.maxY) > 0 ? 0 : (deltaY - self.frame.maxY)
+        let transY = (deltaY - self.frame.maxY) > 0 ? 0 : (deltaY - self.frame.maxY - 15)
         
         let animations:(() -> Void) = {
             //键盘的偏移量
