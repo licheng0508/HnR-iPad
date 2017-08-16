@@ -15,8 +15,17 @@ extension String
     func isPhoneNum() -> Bool {
         
         if self.hasPrefix("1") && self.characters.count == 11 {
-            return true
+            return self.isNumber()
         }
         return false
+    }
+    
+    /// 当前字符串是否是数字
+    func isNumber() -> Bool {
+
+        let number = "^[0-9]*$"
+        let regexNumber = NSPredicate(format: "SELF MATCHES %@",number)
+        
+        return regexNumber.evaluate(with: self)
     }
 }
