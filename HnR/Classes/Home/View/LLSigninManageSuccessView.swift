@@ -59,7 +59,7 @@ class LLSigninManageSuccessView: UIView {
         setupView()
         
     }
-    
+
     // MARK: - 按钮点击
     
     /// 关闭按钮点击
@@ -95,8 +95,11 @@ class LLSigninManageSuccessView: UIView {
         UIView.animate(withDuration: 0.25) {
             self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             
-            //添加一个5秒自动消失的定时器
-            
+            //添加一个5秒延迟操作
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+                // 你想做啥
+                self.closeBtnClick()
+            }
         }
     }
     
