@@ -97,6 +97,9 @@ extension LLHomeViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 let signinManageVC = LLSigninManageViewController(nibName: "LLSigninManageViewController", bundle: nil)
                 self.navigationController?.pushViewController(signinManageVC, animated: true)
                 
+//                let signinManageVC = LLBabySigninManageViewController(nibName: "LLBabySigninManageViewController", bundle: nil)
+//                self.navigationController?.pushViewController(signinManageVC, animated: true)
+                
             }else if model.sequence == SequenceType.sequenceTypeCourseManage {//课程管理
                 
                 let courseManageVC = LLCourseManageViewController(nibName: "LLCourseManageViewController", bundle: nil)

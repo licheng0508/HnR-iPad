@@ -6,7 +6,7 @@
 //  Copyright © 2017年 licheng. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /*
  自定义LOG的目的:
@@ -40,3 +40,46 @@ func UIColorWithRed(_ red: Float, green: Float, blue: Float, alpha: Float? = 1.0
 
     return UIColor.init(colorLiteralRed: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha!)
 }
+
+//typealias Task = (_ cancel : Bool) -> Void
+//
+//func delay(time: TimeInterval, task: ()->()) ->  Task? {
+//    
+//    func dispatch_later(block:()->()) {
+//        dispatch_after(
+//            
+//            dispatch_time(
+//                DISPATCH_TIME_NOW,
+//                Int64(time * Double(NSEC_PER_SEC))),
+//            dispatch_get_main_queue(),
+//            block)
+//    }
+//    
+//    var closure: dispatch_block_t? = task
+//    var result: Task?
+//    
+//    let delayedClosure: Task = {
+//        cancel in
+//        if let internalClosure = closure {
+//            if (cancel == false) {
+//                DispatchQueue.main.async(execute: internalClosure);
+//            }
+//        }
+//        closure = nil
+//        result = nil
+//    }
+//    
+//    result = delayedClosure
+//    
+//    dispatch_later {
+//        if let delayedClosure = result {
+//            delayedClosure(false)
+//        }
+//    }
+//    
+//    return result;
+//}
+//
+//func cancel(task:Task?) {
+//    task?(true)
+//}

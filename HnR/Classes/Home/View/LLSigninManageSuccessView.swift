@@ -72,7 +72,6 @@ class LLSigninManageSuccessView: UIView {
     /// 初始化view
     private func setupView(){
         
-        
         //添加阴影
         bgView.layer.shadowOpacity = 0.8
         bgView.layer.shadowColor = UIColor.lightGray.cgColor
@@ -95,6 +94,9 @@ class LLSigninManageSuccessView: UIView {
         transform = CGAffineTransform(scaleX: CGFloat.leastNormalMagnitude, y: CGFloat.leastNormalMagnitude)
         UIView.animate(withDuration: 0.25) {
             self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            
+            //添加一个5秒自动消失的定时器
+            
         }
     }
     
