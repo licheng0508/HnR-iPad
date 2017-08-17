@@ -105,6 +105,7 @@
 		5AB6E8B41F4538B200A9272F /* LLSigninManageSuccessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6E8B21F4538B200A9272F /* LLSigninManageSuccessCell.xib */; };
 		5AB6E8B81F4572D400A9272F /* LLBabySigninManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6E8B61F4572D400A9272F /* LLBabySigninManageViewController.swift */; };
 		5AB6E8B91F4572D400A9272F /* LLBabySigninManageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6E8B71F4572D400A9272F /* LLBabySigninManageViewController.xib */; };
+		5AB6E8C21F457F0300A9272F /* LLKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6E8C11F457F0300A9272F /* LLKeyboardView.swift */; };
 		5AE4CA8D1F3073830088B671 /* LLMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA8C1F3073830088B671 /* LLMaskView.swift */; };
 		5AE4CA971F31C8FB0088B671 /* LLSignWayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA961F31C8FB0088B671 /* LLSignWayModel.swift */; };
 		5AE4CA991F32BAF80088B671 /* LLHomeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA981F32BAF80088B671 /* LLHomeListModel.swift */; };
@@ -353,6 +354,7 @@
 		5AB6E8B21F4538B200A9272F /* LLSigninManageSuccessCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSigninManageSuccessCell.xib; sourceTree = "<group>"; };
 		5AB6E8B61F4572D400A9272F /* LLBabySigninManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBabySigninManageViewController.swift; sourceTree = "<group>"; };
 		5AB6E8B71F4572D400A9272F /* LLBabySigninManageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLBabySigninManageViewController.xib; sourceTree = "<group>"; };
+		5AB6E8C11F457F0300A9272F /* LLKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLKeyboardView.swift; sourceTree = "<group>"; };
 		5AE4CA8C1F3073830088B671 /* LLMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLMaskView.swift; sourceTree = "<group>"; };
 		5AE4CA961F31C8FB0088B671 /* LLSignWayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSignWayModel.swift; sourceTree = "<group>"; };
 		5AE4CA981F32BAF80088B671 /* LLHomeListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLHomeListModel.swift; sourceTree = "<group>"; };
@@ -605,6 +607,7 @@
 		5A02A4601F1F402E00F60AB8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5AB6E8C11F457F0300A9272F /* LLKeyboardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1059,6 +1062,7 @@
 				5A0118301F42F8AE0063C890 /* LLInputCodeView.swift in Sources */,
 				5A6BEE2A1F302E3200F9FE00 /* LLSignListModel.swift in Sources */,
 				5AE4CA9F1F33120E0088B671 /* CALayer+Additions.swift in Sources */,
+				5AB6E8C21F457F0300A9272F /* LLKeyboardView.swift in Sources */,
 				5A0117EE1F41A01F0063C890 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				5A01180C1F41A01F0063C890 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				5A0118061F41A01F0063C890 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,

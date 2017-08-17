@@ -43,8 +43,10 @@ class ALFTool {
                 //隐藏网络请求弹框
                 LLNetWorkLoadingTool.sharedInstance.loadingStopAnimation()
                 
+                MBProgressHUDShowText("网络请求失败")
+                LLPrint("获取服务器接口失败 \(response.description)")
+                
                 finishedCallback(HnRBaseModel())
-                LLPrint("获取服务器接口失败")
                 return
             }
             

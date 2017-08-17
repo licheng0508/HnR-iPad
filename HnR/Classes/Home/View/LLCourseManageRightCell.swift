@@ -126,8 +126,12 @@ class LLCourseManageRightCell: UITableViewCell {
             ]
         HnRNetWorkTool.getUserSignOutWayData(parameters: paramsDic) { (result) in
             
-            if result.status{
-                
+            guard  result != nil else {
+                LLPrint("签出失败")
+                return
+            }
+            
+            if (result?.status)!{
                 self.myDelegate?.courseManageRightCellClickSucess(self, message: "签出成功")
             }
         }

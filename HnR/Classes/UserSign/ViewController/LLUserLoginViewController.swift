@@ -219,5 +219,18 @@ class LLUserLoginViewController: UIViewController {
             animations()
         }
     }
-
 }
+
+// MARK: - UITextFieldDelegate代理
+extension LLUserLoginViewController: UITextFieldDelegate
+{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        // 只能输入数字
+        if !string.isNumber() {
+            return false
+        }
+        return true
+    }
+}
+

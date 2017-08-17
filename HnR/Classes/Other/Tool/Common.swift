@@ -28,3 +28,5 @@ let User_Account_Shop_Name = "UserAccountShopName"
 /// 背景色
 let View_Bg_Color = UIColorWithRed(243, green: 243, blue: 243)
 
+/// 提示框显示时间秒
+let HUD_Show_Text_Second = 2.0

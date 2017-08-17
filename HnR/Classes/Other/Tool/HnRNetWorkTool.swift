@@ -68,7 +68,7 @@ class HnRNetWorkTool {
     }
     
     /// 签到、取消签到 接口
-    class func getUserSignInWayData(parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : LLSignWayModel) -> ()) {
+    class func getUserSignInWayData(parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : LLSignWayModel?) -> ()) {
         
         let urlStr = "chain/sign"
         
@@ -78,11 +78,12 @@ class HnRNetWorkTool {
                 
                 finishedCallback(result)
             }
+            finishedCallback(nil)
         }
     }
     
     /// 签出 、取消签出 接口
-    class func getUserSignOutWayData(parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : LLSignWayModel) -> ()) {
+    class func getUserSignOutWayData(parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : LLSignWayModel?) -> ()) {
         
         let urlStr = "chain/sign/out"
         
@@ -92,11 +93,12 @@ class HnRNetWorkTool {
                 
                 finishedCallback(result)
             }
+            finishedCallback(nil)
         }
     }
     
     /// 验证密码输入接口
-    class func getUserPassWordValidateData(parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : LLSignWayModel) -> ()) {
+    class func getUserPassWordValidateData(parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : LLSignWayModel?) -> ()) {
         
         let urlStr = "chain/user/password/validate"
         
@@ -106,6 +108,7 @@ class HnRNetWorkTool {
                 
                 finishedCallback(result)
             }
+            finishedCallback(nil)
         }
     }
     

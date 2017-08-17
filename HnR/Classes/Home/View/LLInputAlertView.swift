@@ -24,7 +24,7 @@ enum viewType: Int {
     case viewTypeExitView = 99
 }
 
-class LLInputAlertView: UIView {
+class LLInputAlertView: LLKeyboardView {
 
     // MARK: - 参数
     
@@ -73,6 +73,7 @@ class LLInputAlertView: UIView {
     // 通过xib创建
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
     }
     
     override func awakeFromNib() {
@@ -80,16 +81,6 @@ class LLInputAlertView: UIView {
         
         // 初始化view
         setupView()
-        
-        //监听键盘事件
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(note:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHidden(note:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
-    }
-    // 界面消失
-    deinit {
-        // 移除通知
-        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - 按钮点击
@@ -128,7 +119,12 @@ class LLInputAlertView: UIView {
         ]
         HnRNetWorkTool.getUserPassWordValidateData(parameters: paramsDic) { (result) in
             
-            if result.status{
+            guard  result != nil else {
+                self.autoBecomeFirstResponder()
+                return
+            }
+            
+            if (result?.status)!{
                 
                 if self.viewType == .viewTypeExitView {// 退出界面
                     self.getDataSuccessBack()
@@ -164,7 +160,12 @@ class LLInputAlertView: UIView {
         
         HnRNetWorkTool.getUserSignInWayData(parameters: paramsDic) { (result) in
             
-            if result.status{
+            guard  result != nil else {
+                self.autoBecomeFirstResponder()
+                return
+            }
+            
+            if (result?.status)!{
                 self.getDataSuccessBack()
             }
         }
@@ -185,9 +186,23 @@ class LLInputAlertView: UIView {
         
         HnRNetWorkTool.getUserSignOutWayData(parameters: paramsDic) { (result) in
             
-            if result.status{
+            guard  result != nil else {
+                self.autoBecomeFirstResponder()
+                return
+            }
+            
+            if (result?.status)!{
                 self.getDataSuccessBack()
             }
+        }
+    }
+    
+    /// 自动调起键盘
+    private func autoBecomeFirstResponder() {
+        //添加一个延迟操作
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + HUD_Show_Text_Second) {
+            //自动调取键盘
+            self.inputPassWordText.becomeFirstResponder()
         }
     }
 
@@ -219,50 +234,6 @@ class LLInputAlertView: UIView {
         }
     }
     
-    // MARK: - 公共方法
-    
-    // 键盘出现
-    func keyboardWillShow(note: NSNotification) {
-        let userInfo = note.userInfo!
-        let  keyBoardBounds = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        
-        let deltaY = getMainScreenHeight() - keyBoardBounds.size.height
-        let transY = (deltaY - self.frame.maxY) > 0 ? 0 : (deltaY - self.frame.maxY - 15)
-        
-        let animations:(() -> Void) = {
-            //键盘的偏移量
-            self.transform = CGAffineTransform(translationX: 0 , y: transY)
-        }
-        if duration > 0 {
-            let options = UIViewAnimationOptions(rawValue: UInt((userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).intValue << 16))
-            
-            UIView.animate(withDuration: duration, delay: 0, options:options, animations: animations, completion: nil)
-            
-        }else{
-            animations()
-        }
-    }
-    
-    // 键盘隐藏
-    func keyboardWillHidden(note: NSNotification) {
-        
-        let userInfo  = note.userInfo!
-        let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        
-        let animations:(() -> Void) = {
-            //键盘的偏移量
-            self.transform = CGAffineTransform.identity
-        }
-        if duration > 0 {
-            let options = UIViewAnimationOptions(rawValue: UInt((userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).intValue << 16))
-            
-            UIView.animate(withDuration: duration, delay: 0, options:options, animations: animations, completion: nil)
-        }else{
-            animations()
-        }
-    }
-    
     // MARK: - 外部调用方法
     
     /// load view from xib 0.取消签到 3.取消签出 99.退出
@@ -282,6 +253,15 @@ extension LLInputAlertView: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // 确定按钮点击
         sureBtnClick()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        // 只能输入数字
+        if !string.isNumber() {
+            return false
+        }
         return true
     }
 }

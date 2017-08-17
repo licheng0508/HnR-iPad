@@ -40,7 +40,7 @@ private func setupDetailsLabel(hub: MBProgressHUD, message: String?) {
     hub.label.text = nil
     hub.detailsLabel.text = message;
     hub.detailsLabel.font = UIFont.systemFont(ofSize: 21)
-    hub.hide(animated: true, afterDelay: 2.0)
+    hub.hide(animated: true, afterDelay: HUD_Show_Text_Second)
     
 }
 

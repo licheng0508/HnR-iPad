@@ -14,7 +14,7 @@ protocol LLInputCodeAlertViewDelegate: NSObjectProtocol{
     func inputCodeAlertViewSucess(_ view: LLInputCodeAlertView)
 }
 
-class LLInputCodeAlertView: UIView {
+class LLInputCodeAlertView: LLKeyboardView {
 
     // MARK: - 参数
     
@@ -51,15 +51,6 @@ class LLInputCodeAlertView: UIView {
         // 初始化view
         setupView()
         
-        //监听键盘事件
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(note:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHidden(note:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
-    }
-    // 界面消失
-    deinit {
-        // 移除通知
-        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - 按钮点击
@@ -96,49 +87,7 @@ class LLInputCodeAlertView: UIView {
     }
     
     // MARK: - 公共方法
-    
-    // 键盘出现
-    func keyboardWillShow(note: NSNotification) {
-        let userInfo = note.userInfo!
-        let  keyBoardBounds = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        
-        let deltaY = getMainScreenHeight() - keyBoardBounds.size.height
-        let transY = (deltaY - self.frame.maxY) > 0 ? 0 : (deltaY - self.frame.maxY - 15)
-        
-        let animations:(() -> Void) = {
-            //键盘的偏移量
-            self.transform = CGAffineTransform(translationX: 0 , y: transY)
-        }
-        if duration > 0 {
-            let options = UIViewAnimationOptions(rawValue: UInt((userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).intValue << 16))
-            
-            UIView.animate(withDuration: duration, delay: 0, options:options, animations: animations, completion: nil)
-            
-        }else{
-            animations()
-        }
-    }
-    
-    // 键盘隐藏
-    func keyboardWillHidden(note: NSNotification) {
-        
-        let userInfo  = note.userInfo!
-        let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        
-        let animations:(() -> Void) = {
-            //键盘的偏移量
-            self.transform = CGAffineTransform.identity
-        }
-        if duration > 0 {
-            let options = UIViewAnimationOptions(rawValue: UInt((userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).intValue << 16))
-            
-            UIView.animate(withDuration: duration, delay: 0, options:options, animations: animations, completion: nil)
-        }else{
-            animations()
-        }
-    }
-    
+
     /// 签到
     func getSigninData(password: String) {
         
@@ -162,7 +111,16 @@ class LLInputCodeAlertView: UIView {
         
         HnRNetWorkTool.getUserSignInWayData(parameters: paramsDic) { (result) in
             
-            if result.status{
+            guard  result != nil else {
+                //添加一个延迟操作
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + HUD_Show_Text_Second) {
+                    //自动调取键盘
+                    self.inputCodeView.textField.becomeFirstResponder()
+                }
+                return
+            }
+            
+            if (result?.status)!{
                 
                 self.cacelBtnClick()
                 self.myDelegate?.inputCodeAlertViewSucess(self)
@@ -180,7 +138,6 @@ class LLInputCodeAlertView: UIView {
         view.myDelegate = delegate
         return view
     }
-
 }
 
 // MARK: - maskView代理
