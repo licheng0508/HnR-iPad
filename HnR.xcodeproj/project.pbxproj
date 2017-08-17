@@ -101,6 +101,8 @@
 		5AABB02A1F25E9E80045B622 /* HnRNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AABB0291F25E9E80045B622 /* HnRNetWorkTool.swift */; };
 		5AB6E89B1F44414C00A9272F /* LLSigninManageSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6E89A1F44414C00A9272F /* LLSigninManageSuccessView.swift */; };
 		5AB6E8A41F44416200A9272F /* LLSigninManageSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6E8A31F44416200A9272F /* LLSigninManageSuccessView.xib */; };
+		5AB6E8B31F4538B200A9272F /* LLSigninManageSuccessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6E8B11F4538B200A9272F /* LLSigninManageSuccessCell.swift */; };
+		5AB6E8B41F4538B200A9272F /* LLSigninManageSuccessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6E8B21F4538B200A9272F /* LLSigninManageSuccessCell.xib */; };
 		5AE4CA8D1F3073830088B671 /* LLMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA8C1F3073830088B671 /* LLMaskView.swift */; };
 		5AE4CA8F1F3081970088B671 /* LLSigninManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA8E1F3081970088B671 /* LLSigninManageView.swift */; };
 		5AE4CA911F3081A50088B671 /* LLSigninManageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE4CA901F3081A40088B671 /* LLSigninManageView.xib */; };
@@ -349,6 +351,8 @@
 		5AABB0291F25E9E80045B622 /* HnRNetWorkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HnRNetWorkTool.swift; sourceTree = "<group>"; };
 		5AB6E89A1F44414C00A9272F /* LLSigninManageSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSigninManageSuccessView.swift; sourceTree = "<group>"; };
 		5AB6E8A31F44416200A9272F /* LLSigninManageSuccessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSigninManageSuccessView.xib; sourceTree = "<group>"; };
+		5AB6E8B11F4538B200A9272F /* LLSigninManageSuccessCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSigninManageSuccessCell.swift; sourceTree = "<group>"; };
+		5AB6E8B21F4538B200A9272F /* LLSigninManageSuccessCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSigninManageSuccessCell.xib; sourceTree = "<group>"; };
 		5AE4CA8C1F3073830088B671 /* LLMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLMaskView.swift; sourceTree = "<group>"; };
 		5AE4CA8E1F3081970088B671 /* LLSigninManageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSigninManageView.swift; sourceTree = "<group>"; };
 		5AE4CA901F3081A40088B671 /* LLSigninManageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSigninManageView.xib; sourceTree = "<group>"; };
@@ -556,6 +560,8 @@
 				5AE4CA931F31AB0A0088B671 /* LLSigninManageCourseCell.xib */,
 				5AB6E89A1F44414C00A9272F /* LLSigninManageSuccessView.swift */,
 				5AB6E8A31F44416200A9272F /* LLSigninManageSuccessView.xib */,
+				5AB6E8B11F4538B200A9272F /* LLSigninManageSuccessCell.swift */,
+				5AB6E8B21F4538B200A9272F /* LLSigninManageSuccessCell.xib */,
 				5AE4CA9A1F32D1DE0088B671 /* LLInputAlertView.swift */,
 				5AE4CA9C1F32D2010088B671 /* LLInputAlertView.xib */,
 				5A0118241F42F2210063C890 /* LLInputCodeAlertView.swift */,
@@ -981,6 +987,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB6E8B41F4538B200A9272F /* LLSigninManageSuccessCell.xib in Resources */,
 				5AE4CAAB1F341B230088B671 /* LLCourseManageRightCell.xib in Resources */,
 				5A6BEE281F301AA100F9FE00 /* LLSigninManageListCell.xib in Resources */,
 				5AE4CA951F31AB0A0088B671 /* LLSigninManageCourseCell.xib in Resources */,
@@ -1102,6 +1109,7 @@
 				5AE4CAE31F3AE76C0088B671 /* Serializer+Legacy.swift in Sources */,
 				5A02A3971F1F3D3700F60AB8 /* AppDelegate.swift in Sources */,
 				5A0117F21F41A01F0063C890 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,
+				5AB6E8B31F4538B200A9272F /* LLSigninManageSuccessCell.swift in Sources */,
 				5A6BEEA01F30550B00F9FE00 /* UIImage+GIF.m in Sources */,
 				5A0117F91F41A01F0063C890 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				5AE4CAE71F3AE76C0088B671 /* URLTransform.swift in Sources */,

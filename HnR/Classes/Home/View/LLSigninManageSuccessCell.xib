@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LLSigninManageSuccessCell" id="gTV-IL-0wX" customClass="LLSigninManageSuccessCell" customModule="HnR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="571" height="175"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="571" height="175"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RZh-bk-DV3">
+                        <rect key="frame" x="60" y="0.0" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="Oy4-C1-M8Q"/>
+                            <constraint firstAttribute="width" constant="100" id="Zu1-NL-yWb"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="50"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2x-p4-90d">
+                        <rect key="frame" x="30" y="135" width="160" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="160" id="ilT-5c-MSS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <color key="textColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="课程名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSj-kD-cQQ">
+                        <rect key="frame" x="205" y="0.0" width="356" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <color key="textColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上课区域" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Dd-Pc-b9q">
+                        <rect key="frame" x="205" y="141" width="356" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <color key="textColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上课时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZB-8O-Jsc">
+                        <rect key="frame" x="205" y="70.5" width="356" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <color key="textColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="4Dd-Pc-b9q" firstAttribute="leading" secondItem="fZB-8O-Jsc" secondAttribute="leading" id="8fv-lx-R3H"/>
+                <constraint firstItem="fZB-8O-Jsc" firstAttribute="top" secondItem="aSj-kD-cQQ" secondAttribute="bottom" constant="45" id="A2w-5T-tg9"/>
+                <constraint firstItem="aSj-kD-cQQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Agm-5V-pkL"/>
+                <constraint firstAttribute="trailing" secondItem="fZB-8O-Jsc" secondAttribute="trailing" constant="10" id="EJq-0e-P1V"/>
+                <constraint firstItem="4Dd-Pc-b9q" firstAttribute="top" secondItem="fZB-8O-Jsc" secondAttribute="bottom" constant="45" id="LMr-wj-B0g"/>
+                <constraint firstItem="F2x-p4-90d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="gYY-aE-10Q"/>
+                <constraint firstItem="RZh-bk-DV3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="60" id="gnn-a6-X30"/>
+                <constraint firstItem="fZB-8O-Jsc" firstAttribute="leading" secondItem="RZh-bk-DV3" secondAttribute="trailing" constant="45" id="i0b-WO-hUb"/>
+                <constraint firstItem="aSj-kD-cQQ" firstAttribute="leading" secondItem="RZh-bk-DV3" secondAttribute="trailing" constant="45" id="l4q-PI-tME"/>
+                <constraint firstAttribute="trailing" secondItem="4Dd-Pc-b9q" secondAttribute="trailing" constant="10" id="pS3-N7-kog"/>
+                <constraint firstItem="F2x-p4-90d" firstAttribute="top" secondItem="RZh-bk-DV3" secondAttribute="bottom" constant="35" id="qxf-H7-M8n"/>
+                <constraint firstItem="RZh-bk-DV3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vqx-wE-c9Y"/>
+                <constraint firstAttribute="trailing" secondItem="aSj-kD-cQQ" secondAttribute="trailing" constant="10" id="yi5-kQ-Rze"/>
+            </constraints>
+            <size key="customSize" width="330" height="179"/>
+            <connections>
+                <outlet property="areaLabel" destination="4Dd-Pc-b9q" id="lE3-dQ-5dp"/>
+                <outlet property="courseNameLabel" destination="aSj-kD-cQQ" id="D0e-dL-NXi"/>
+                <outlet property="headImageView" destination="RZh-bk-DV3" id="pZm-3E-CdE"/>
+                <outlet property="nameLabel" destination="F2x-p4-90d" id="CXf-ay-dCa"/>
+                <outlet property="timeLabel" destination="fZB-8O-Jsc" id="zFd-F9-ArY"/>
+            </connections>
+            <point key="canvasLocation" x="-52.5" y="-170.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

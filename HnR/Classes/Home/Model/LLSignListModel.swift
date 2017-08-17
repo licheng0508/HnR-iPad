@@ -11,6 +11,12 @@ import UIKit
 
 class LLCourseListModel: HandyJSON {
     
+    /// 头像
+    var headPortrait: String?
+    
+    /// 姓名
+    var childName: String?
+    
     /// userCourseId
     var userCourseId: String?
     
