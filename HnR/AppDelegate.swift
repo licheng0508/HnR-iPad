@@ -68,7 +68,7 @@ extension AppDelegate {
     /// 用于返回默认界面
     func defaultViewController() -> UIViewController
     {
-        if !UserAccount.isLogin() {
+        if UserAccount.isLogin() {
             return homeRootController()
         }
         return LLUserLoginViewController(nibName: "LLUserLoginViewController", bundle: nil)
