@@ -236,6 +236,11 @@ extension LLCourseManageViewController: UITableViewDelegate, UITableViewDataSour
             leftSelectedIndexPath = indexPath
         }
     }
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        
+        return !tableView.isTracking
+    }
 }
 
 // MARK: - LLCourseManageRightCellDelegate

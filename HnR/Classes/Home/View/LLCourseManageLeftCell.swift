@@ -25,6 +25,7 @@ class LLCourseManageLeftCell: UITableViewCell {
             courseNameLabel.text = model?.courseTitle
             startTimeLabel.text = "\(model?.startTime ?? "")" + " - " + "\(model?.endTime ?? "")"
             countLabel.text = "\(model?.signCount ?? 0)" + "/" + "\(model?.reservationCount ?? 0)"
+            
         }
     }
     
@@ -35,6 +36,7 @@ class LLCourseManageLeftCell: UITableViewCell {
         // 设置选中背景颜色
         selectedBackgroundView = UIView(frame: frame)
         selectedBackgroundView?.backgroundColor = UIColorWithRed(115, green: 217, blue: 167)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

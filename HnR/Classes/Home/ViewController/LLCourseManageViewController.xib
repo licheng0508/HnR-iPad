@@ -52,7 +52,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Odp-Fw-8Po">
+                <collectionView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Odp-Fw-8Po">
                     <rect key="frame" x="324" y="0.0" width="700" height="100"/>
                     <color key="backgroundColor" red="0.89019607840000003" green="0.96862745100000003" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -79,7 +79,7 @@
                 </tableView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4m8-ju-yqk">
                     <rect key="frame" x="0.0" y="100" width="324" height="668"/>
-                    <color key="backgroundColor" red="0.8901960784313725" green="0.96862745098039216" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.89019607840000003" green="0.96862745100000003" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="324" id="9vk-ca-F5C"/>
                     </constraints>
