@@ -50,7 +50,7 @@ class ALFTool {
                 return
             }
             
-//            LLPrint("resultJSON == \(JSON(result))")
+            LLPrint("resultJSON == \(JSON(result))")
             
             //隐藏网络请求弹框
             LLNetWorkLoadingTool.sharedInstance.loadingStopAnimation()

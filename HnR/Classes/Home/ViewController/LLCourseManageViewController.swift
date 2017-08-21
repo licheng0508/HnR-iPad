@@ -30,6 +30,7 @@ class LLCourseManageViewController: UIViewController {
             rightTableView.reloadData()
         }
     }
+    
     /// cellID
     let Course_Manage_Head_Cell = "LLCourseManageHeadCell"
     let Course_Manage_Left_Cell = "LLCourseManageLeftCell"

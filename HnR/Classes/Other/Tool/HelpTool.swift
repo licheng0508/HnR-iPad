@@ -19,11 +19,61 @@ import Foundation
  
  方法名称[行数]: 输出内容
  */
-func LLPrint<T>(_ message: T, method: String = #function, line: Int = #line)
+func LLPrint<T>(_ message: T, method: String = #function, line: Int = #line, file: String = #file)
 {
     #if DEBUG
-        print("\(method)[\(line)]: \(message)")
+        
+        //获取文件名
+        let fileName = (file as NSString).lastPathComponent
+        
+        let logStr = "\(fileName)-\(method)[\(line)]: \(message)"
+        
+        print(logStr)
+        
+        logOutputInFile(logstr: logStr)
+        
     #endif
+}
+
+/// log写入文件
+func logOutputInFile(logstr: String) {
+    
+    // 创建一个日期格式器
+    let dformatter = DateFormatter()
+    // 为日期格式器设置格式字符串
+    dformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    // 使用日期格式器格式化当前日期、时间
+    let datestr = dformatter.string(from: Date())
+
+    dformatter.dateFormat = "yyyy-MM-dd"
+    // 使用日期格式器格式化当前日期、时间
+    let datelog = dformatter.string(from: Date())
+
+    let logURLStr = "///Users/licheng/Desktop/HnRLog/\(datelog)-log.json"
+    let logURL = URL(fileURLWithPath: logURLStr)
+    
+    appendText(fileURL: logURL, string: "\(datestr) \(logstr)")
+
+}
+
+//在文件末尾追加新内容
+func appendText(fileURL: URL, string: String) {
+    do {
+        //如果文件不存在则新建一个
+        if !FileManager.default.fileExists(atPath: fileURL.path) {
+            FileManager.default.createFile(atPath: fileURL.path, contents: nil)
+        }
+        
+        let fileHandle = try FileHandle(forWritingTo: fileURL)
+        let stringToWrite = "\n" + string
+        
+        //找到末尾位置并添加
+        fileHandle.seekToEndOfFile()
+        fileHandle.write(stringToWrite.data(using: String.Encoding.utf8)!)
+        
+    } catch let error as NSError {
+        print("failed to append: \(error)")
+    }
 }
 
 /// 获取屏幕宽度
