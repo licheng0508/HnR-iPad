@@ -104,6 +104,10 @@ class LLCourseManageRightCell: UITableViewCell {
                let view = LLInputAlertView.loadViewFfromNib(delegate: self, viewtype: .viewTypeCancelSignout)
                 view.courseModel = model
                 
+            case .signTypeNoSignin:
+                
+                _ = LLBabyJudgeCardView.loadViewFfromNib()
+                
             default: break
             }
         }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LLBabyJudgeCardView" customModule="HnR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="803" height="602"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8fc-Hu-qYm">
+                    <rect key="frame" x="0.0" y="0.0" width="803" height="602"/>
+                    <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="EMF-hO-TDo">
+                        <size key="itemSize" width="200" height="200"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="j5D-wl-CtE"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="Aj1-Ak-vaJ"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8fc-Hu-qYm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LFC-es-f7c"/>
+                <constraint firstItem="8fc-Hu-qYm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iva-ew-wZI"/>
+                <constraint firstAttribute="bottom" secondItem="8fc-Hu-qYm" secondAttribute="bottom" id="o0b-IX-ZOt"/>
+                <constraint firstAttribute="trailing" secondItem="8fc-Hu-qYm" secondAttribute="trailing" id="tOT-7u-x0h"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="collectionView" destination="8fc-Hu-qYm" id="m7p-Zw-Vla"/>
+            </connections>
+            <point key="canvasLocation" x="-221" y="-205"/>
+        </view>
+    </objects>
+</document>

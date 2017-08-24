@@ -106,6 +106,10 @@
 		5AB6E8B81F4572D400A9272F /* LLBabySigninManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6E8B61F4572D400A9272F /* LLBabySigninManageViewController.swift */; };
 		5AB6E8B91F4572D400A9272F /* LLBabySigninManageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6E8B71F4572D400A9272F /* LLBabySigninManageViewController.xib */; };
 		5AB6E8C21F457F0300A9272F /* LLKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6E8C11F457F0300A9272F /* LLKeyboardView.swift */; };
+		5AB6E8FB1F4EC42D00A9272F /* LLBabyJudgeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6E8FA1F4EC42D00A9272F /* LLBabyJudgeCardView.swift */; };
+		5AB6E9041F4EC44400A9272F /* LLBabyJudgeCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6E9031F4EC44400A9272F /* LLBabyJudgeCardView.xib */; };
+		5AB6E9071F4EC5A000A9272F /* LLBabyJudgeCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6E9051F4EC5A000A9272F /* LLBabyJudgeCardCell.swift */; };
+		5AB6E9081F4EC5A000A9272F /* LLBabyJudgeCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6E9061F4EC5A000A9272F /* LLBabyJudgeCardCell.xib */; };
 		5AE4CA8D1F3073830088B671 /* LLMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA8C1F3073830088B671 /* LLMaskView.swift */; };
 		5AE4CA971F31C8FB0088B671 /* LLSignWayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA961F31C8FB0088B671 /* LLSignWayModel.swift */; };
 		5AE4CA991F32BAF80088B671 /* LLHomeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA981F32BAF80088B671 /* LLHomeListModel.swift */; };
@@ -355,6 +359,10 @@
 		5AB6E8B61F4572D400A9272F /* LLBabySigninManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBabySigninManageViewController.swift; sourceTree = "<group>"; };
 		5AB6E8B71F4572D400A9272F /* LLBabySigninManageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLBabySigninManageViewController.xib; sourceTree = "<group>"; };
 		5AB6E8C11F457F0300A9272F /* LLKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLKeyboardView.swift; sourceTree = "<group>"; };
+		5AB6E8FA1F4EC42D00A9272F /* LLBabyJudgeCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBabyJudgeCardView.swift; sourceTree = "<group>"; };
+		5AB6E9031F4EC44400A9272F /* LLBabyJudgeCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLBabyJudgeCardView.xib; sourceTree = "<group>"; };
+		5AB6E9051F4EC5A000A9272F /* LLBabyJudgeCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBabyJudgeCardCell.swift; sourceTree = "<group>"; };
+		5AB6E9061F4EC5A000A9272F /* LLBabyJudgeCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLBabyJudgeCardCell.xib; sourceTree = "<group>"; };
 		5AE4CA8C1F3073830088B671 /* LLMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLMaskView.swift; sourceTree = "<group>"; };
 		5AE4CA961F31C8FB0088B671 /* LLSignWayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSignWayModel.swift; sourceTree = "<group>"; };
 		5AE4CA981F32BAF80088B671 /* LLHomeListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLHomeListModel.swift; sourceTree = "<group>"; };
@@ -567,6 +575,10 @@
 				5AE4CAA51F341B090088B671 /* LLCourseManageLeftCell.xib */,
 				5AE4CAA81F341B230088B671 /* LLCourseManageRightCell.swift */,
 				5AE4CAA91F341B230088B671 /* LLCourseManageRightCell.xib */,
+				5AB6E8FA1F4EC42D00A9272F /* LLBabyJudgeCardView.swift */,
+				5AB6E9031F4EC44400A9272F /* LLBabyJudgeCardView.xib */,
+				5AB6E9051F4EC5A000A9272F /* LLBabyJudgeCardCell.swift */,
+				5AB6E9061F4EC5A000A9272F /* LLBabyJudgeCardCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -986,10 +998,12 @@
 			files = (
 				5AB6E8B41F4538B200A9272F /* LLSigninManageSuccessCell.xib in Resources */,
 				5AE4CAAB1F341B230088B671 /* LLCourseManageRightCell.xib in Resources */,
+				5AB6E9041F4EC44400A9272F /* LLBabyJudgeCardView.xib in Resources */,
 				5A6BEE281F301AA100F9FE00 /* LLSigninManageListCell.xib in Resources */,
 				5A6BEE241F2F32D100F9FE00 /* LLCourseManageViewController.xib in Resources */,
 				5AE4CAA71F341B090088B671 /* LLCourseManageLeftCell.xib in Resources */,
 				5AB6E8B91F4572D400A9272F /* LLBabySigninManageViewController.xib in Resources */,
+				5AB6E9081F4EC5A000A9272F /* LLBabyJudgeCardCell.xib in Resources */,
 				5A6BEE181F2F0B4B00F9FE00 /* LLHomeListCell.xib in Resources */,
 				5AE4CA9D1F32D2010088B671 /* LLInputAlertView.xib in Resources */,
 				5A547C2D1F29DA6A00756132 /* LLUserLoginViewController.xib in Resources */,
@@ -1097,6 +1111,7 @@
 				5AE4CAE51F3AE76C0088B671 /* TransformOf.swift in Sources */,
 				5A01180A1F41A01F0063C890 /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				5AE4CAD91F3AE76C0088B671 /* ISO8601DateTransform.swift in Sources */,
+				5AB6E8FB1F4EC42D00A9272F /* LLBabyJudgeCardView.swift in Sources */,
 				5AABB0011F25D4230045B622 /* ALFTool.swift in Sources */,
 				5AE4CAAD1F344FDC0088B671 /* UIImage+Extension.swift in Sources */,
 				5A0118101F41A01F0063C890 /* NVActivityIndicatorViewable.swift in Sources */,
@@ -1123,6 +1138,7 @@
 				5A0117F41F41A01F0063C890 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				5A6DC59B1F2B232700B23D64 /* LLNavigationController.swift in Sources */,
 				5A0118011F41A01F0063C890 /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				5AB6E9071F4EC5A000A9272F /* LLBabyJudgeCardCell.swift in Sources */,
 				5A6BEE941F30550B00F9FE00 /* MKAnnotationView+WebCache.m in Sources */,
 				5AE4CAD51F3AE76C0088B671 /* Deserializer.swift in Sources */,
 				5A49E2EF1F28829900C251B0 /* HnRBaseModel.swift in Sources */,
