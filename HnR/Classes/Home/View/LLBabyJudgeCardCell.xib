@@ -12,13 +12,36 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LLBabyJudgeCardCell" id="gTV-IL-0wX" customClass="LLBabyJudgeCardCell" customModule="HnR" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RLt-tB-P93">
+                        <rect key="frame" x="47.5" y="25" width="125" height="125"/>
+                        <color key="backgroundColor" red="0.45098039220000002" green="0.85098039219999999" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="125" id="c0E-zB-OBn"/>
+                            <constraint firstAttribute="width" constant="125" id="hpY-RN-Qcp"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="感恩" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwQ-s2-hlb">
+                        <rect key="frame" x="10" y="169" width="200" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NwQ-s2-hlb" secondAttribute="trailing" constant="10" id="Pdg-Pb-x3Q"/>
+                <constraint firstItem="RLt-tB-P93" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="25" id="TTv-30-lBb"/>
+                <constraint firstItem="NwQ-s2-hlb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="ill-bc-20T"/>
+                <constraint firstAttribute="bottom" secondItem="NwQ-s2-hlb" secondAttribute="bottom" constant="30" id="nVV-6Z-vpp"/>
+                <constraint firstItem="RLt-tB-P93" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="uI0-tO-B4I"/>
+            </constraints>
             <size key="customSize" width="137" height="126"/>
             <point key="canvasLocation" x="-19" y="-72"/>
         </collectionViewCell>

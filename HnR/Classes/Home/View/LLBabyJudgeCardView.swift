@@ -49,7 +49,7 @@ class LLBabyJudgeCardView: UIView {
     /// 初始化view
     private func setupView(){
         
-        bounds = CGRect(x: 0, y: 0, width: 803, height: 602)
+        bounds = CGRect(x: 0, y: 0, width: 883, height: 662)
         center = maskViewTap.center
         maskViewTap.addSubview(self)
         
