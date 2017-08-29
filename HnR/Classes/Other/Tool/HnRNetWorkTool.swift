@@ -131,7 +131,7 @@ class HnRNetWorkTool {
         
         let urlStr = "chain/sign/child/list"
         
-        ALFTool.postRequestData(isloading: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
+        ALFTool.postRequestData(urlstring: urlStr, parameters: parameters) { (JsonModel) in
             
             if let result = LLCourseChildListModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 
@@ -145,7 +145,7 @@ class HnRNetWorkTool {
         
         let urlStr = "chain/lesson/growth/list"
         
-        ALFTool.postRequestData(urlstring: urlStr, parameters: parameters) { (JsonModel) in
+        ALFTool.postRequestData(isloading: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
             
             if let result = LLChildGrowthRecordListModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 

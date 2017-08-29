@@ -128,11 +128,9 @@ class LLCourseManageRightCell: UITableViewCell {
         
         HnRNetWorkTool.getTeacherJudgeListData(parameters: paramsDic) { (result) in
             
-//            let view = LLBabyJudgeCardView.loadViewFfromNib()
-            
+            LLBabyJudgeCardView.loadViewFfromNib().model = result
         }
     }
-    
     
     /// 签出
     private func getSignOutData() {

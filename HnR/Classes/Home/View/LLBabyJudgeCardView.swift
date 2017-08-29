@@ -18,6 +18,14 @@ class LLBabyJudgeCardView: UIView {
     /// cellID
     let Baby_Judge_Card_Cell = "LLBabyJudgeCardCell"
     
+    /// 数据源
+    var model: LLChildGrowthRecordListModel?{
+    
+        didSet{
+        
+            collectionView.reloadData()
+        }
+    }
     
     // MARK: - 懒加载
     
@@ -43,7 +51,6 @@ class LLBabyJudgeCardView: UIView {
         
         // 初始化view
         setupView()
-        
     }
 
     /// 初始化view
@@ -86,13 +93,15 @@ extension LLBabyJudgeCardView: UICollectionViewDelegate, UICollectionViewDataSou
     /// item个数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 12
+        return model?.childGrowthRecordList?.count ?? 0
     }
     
     /// 返回cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Baby_Judge_Card_Cell, for: indexPath) as! LLBabyJudgeCardCell
+        
+        cell.model = model?.childGrowthRecordList?[indexPath.item]
         
         return cell
     }

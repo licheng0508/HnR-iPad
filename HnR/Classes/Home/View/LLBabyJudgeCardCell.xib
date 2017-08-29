@@ -70,6 +70,9 @@
                                         <integer key="value" value="42"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addOneBtnClick" destination="gTV-IL-0wX" eventType="touchUpInside" id="ASI-OC-kwt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HI9-Tu-nU7">
                                 <rect key="frame" x="118" y="68" width="84" height="84"/>
@@ -88,6 +91,9 @@
                                         <integer key="value" value="42"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="minusOneBtnClick" destination="gTV-IL-0wX" eventType="touchUpInside" id="Bgp-To-29u"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -117,6 +123,9 @@
             <size key="customSize" width="137" height="126"/>
             <connections>
                 <outlet property="bgView" destination="CDk-xs-Zca" id="Thh-ag-CEM"/>
+                <outlet property="flagBtn" destination="Wlj-Ta-zXx" id="bEC-5w-jWn"/>
+                <outlet property="iconImageView" destination="RLt-tB-P93" id="L7P-ST-WKr"/>
+                <outlet property="nameLabel" destination="NwQ-s2-hlb" id="Qd7-Cc-CyV"/>
             </connections>
             <point key="canvasLocation" x="-232" y="-80"/>
         </collectionViewCell>

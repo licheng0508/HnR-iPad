@@ -53,7 +53,7 @@ class LLChildGrowthRecordModel: HandyJSON {
 class LLChildGrowthRecordListModel: HandyJSON {
     
     /// 列表
-    var childList: [LLChildGrowthRecordModel]?
+    var childGrowthRecordList: [LLChildGrowthRecordModel]?
     
     required init() {}
     
