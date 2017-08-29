@@ -110,6 +110,7 @@
 		5AB6E9041F4EC44400A9272F /* LLBabyJudgeCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6E9031F4EC44400A9272F /* LLBabyJudgeCardView.xib */; };
 		5AB6E9071F4EC5A000A9272F /* LLBabyJudgeCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6E9051F4EC5A000A9272F /* LLBabyJudgeCardCell.swift */; };
 		5AB6E9081F4EC5A000A9272F /* LLBabyJudgeCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6E9061F4EC5A000A9272F /* LLBabyJudgeCardCell.xib */; };
+		5AB6E90B1F541D8900A9272F /* LLChildGrowthRecordListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6E90A1F541D8900A9272F /* LLChildGrowthRecordListModel.swift */; };
 		5AE4CA8D1F3073830088B671 /* LLMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA8C1F3073830088B671 /* LLMaskView.swift */; };
 		5AE4CA971F31C8FB0088B671 /* LLSignWayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA961F31C8FB0088B671 /* LLSignWayModel.swift */; };
 		5AE4CA991F32BAF80088B671 /* LLHomeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4CA981F32BAF80088B671 /* LLHomeListModel.swift */; };
@@ -363,6 +364,7 @@
 		5AB6E9031F4EC44400A9272F /* LLBabyJudgeCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLBabyJudgeCardView.xib; sourceTree = "<group>"; };
 		5AB6E9051F4EC5A000A9272F /* LLBabyJudgeCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBabyJudgeCardCell.swift; sourceTree = "<group>"; };
 		5AB6E9061F4EC5A000A9272F /* LLBabyJudgeCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLBabyJudgeCardCell.xib; sourceTree = "<group>"; };
+		5AB6E90A1F541D8900A9272F /* LLChildGrowthRecordListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChildGrowthRecordListModel.swift; sourceTree = "<group>"; };
 		5AE4CA8C1F3073830088B671 /* LLMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLMaskView.swift; sourceTree = "<group>"; };
 		5AE4CA961F31C8FB0088B671 /* LLSignWayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSignWayModel.swift; sourceTree = "<group>"; };
 		5AE4CA981F32BAF80088B671 /* LLHomeListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLHomeListModel.swift; sourceTree = "<group>"; };
@@ -549,6 +551,7 @@
 				5AE4CAAE1F3457FF0088B671 /* LLCourseManegeHeadModel.swift */,
 				5AE4CAB01F380B8C0088B671 /* LLCourseSigninListModel.swift */,
 				5AE4CAB21F380C700088B671 /* LLCourseChildListModel.swift */,
+				5AB6E90A1F541D8900A9272F /* LLChildGrowthRecordListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1140,6 +1143,7 @@
 				5A0118011F41A01F0063C890 /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				5AB6E9071F4EC5A000A9272F /* LLBabyJudgeCardCell.swift in Sources */,
 				5A6BEE941F30550B00F9FE00 /* MKAnnotationView+WebCache.m in Sources */,
+				5AB6E90B1F541D8900A9272F /* LLChildGrowthRecordListModel.swift in Sources */,
 				5AE4CAD51F3AE76C0088B671 /* Deserializer.swift in Sources */,
 				5A49E2EF1F28829900C251B0 /* HnRBaseModel.swift in Sources */,
 				5A6BEE961F30550B00F9FE00 /* NSImage+WebCache.m in Sources */,

@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = defaultViewController()
         window?.makeKeyAndVisible()
         
-        
         return true
     }
     deinit {

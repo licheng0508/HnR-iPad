@@ -106,7 +106,7 @@ class LLCourseManageRightCell: UITableViewCell {
                 
             case .signTypeNoSignin:
                 
-                _ = LLBabyJudgeCardView.loadViewFfromNib()
+                getTeacherJudgeChildData()
                 
             default: break
             }
@@ -116,6 +116,24 @@ class LLCourseManageRightCell: UITableViewCell {
     // MARK: - 公共方法
     
     // MARK: - 私有方法
+    private func getTeacherJudgeChildData() {
+        
+        guard let userCourseId = model?.userCourseId else {
+            return
+        }
+        
+        let paramsDic = ["userId": UserAccount.getUserAccountUserId(),
+                         "userCourseId": userCourseId
+        ]
+        
+        HnRNetWorkTool.getTeacherJudgeListData(parameters: paramsDic) { (result) in
+            
+//            let view = LLBabyJudgeCardView.loadViewFfromNib()
+            
+        }
+    }
+    
+    
     /// 签出
     private func getSignOutData() {
                 

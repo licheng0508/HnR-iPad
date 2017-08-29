@@ -131,9 +131,23 @@ class HnRNetWorkTool {
         
         let urlStr = "chain/sign/child/list"
         
-        ALFTool.postRequestData(urlstring: urlStr, parameters: parameters) { (JsonModel) in
+        ALFTool.postRequestData(isloading: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
             
             if let result = LLCourseChildListModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
+                
+                finishedCallback(result)
+            }
+        }
+    }
+    
+    /// 获取老师评论学生类型列表
+    class func getTeacherJudgeListData(parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : LLChildGrowthRecordListModel) -> ()) {
+        
+        let urlStr = "chain/lesson/growth/list"
+        
+        ALFTool.postRequestData(urlstring: urlStr, parameters: parameters) { (JsonModel) in
+            
+            if let result = LLChildGrowthRecordListModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 
                 finishedCallback(result)
             }
