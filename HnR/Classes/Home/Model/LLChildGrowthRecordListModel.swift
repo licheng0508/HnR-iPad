@@ -46,6 +46,9 @@ class LLChildGrowthRecordModel: HandyJSON {
     /// score
     var score: JudegeScore?
     
+    /// 是否是选中的cell
+    var isSelectedCell: Bool = false
+    
     required init() {}
     
 }

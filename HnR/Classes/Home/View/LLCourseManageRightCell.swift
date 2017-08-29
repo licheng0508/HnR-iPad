@@ -128,7 +128,7 @@ class LLCourseManageRightCell: UITableViewCell {
         
         HnRNetWorkTool.getTeacherJudgeListData(parameters: paramsDic) { (result) in
             
-            LLBabyJudgeCardView.loadViewFfromNib().model = result
+            LLBabyJudgeCardView.loadViewFfromNib(usercoursrid: userCourseId).model = result
         }
     }
     

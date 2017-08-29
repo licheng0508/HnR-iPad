@@ -15,6 +15,8 @@ class LLBabyJudgeCardView: UIView {
     /// collectionView
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var userCourseId: String?
+    
     /// cellID
     let Baby_Judge_Card_Cell = "LLBabyJudgeCardCell"
     
@@ -77,10 +79,11 @@ class LLBabyJudgeCardView: UIView {
     // MARK: - 外部调用方法
     
     /// load view from xib
-    class func loadViewFfromNib() -> LLBabyJudgeCardView {
+    class func loadViewFfromNib(usercoursrid: String) -> LLBabyJudgeCardView {
         
         let nib = UINib(nibName: "LLBabyJudgeCardView", bundle: nil)
         let view = nib.instantiate(withOwner: self, options: nil).first as! LLBabyJudgeCardView
+        view.userCourseId = usercoursrid
         return view
     }
 
@@ -102,15 +105,46 @@ extension LLBabyJudgeCardView: UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Baby_Judge_Card_Cell, for: indexPath) as! LLBabyJudgeCardCell
         
         cell.model = model?.childGrowthRecordList?[indexPath.item]
+        cell.userCourseId = userCourseId
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        LLPrint(indexPath)
+        if let dataArray = model?.childGrowthRecordList {
+            
+            let currentModel = dataArray[indexPath.item]
+            // 已经评论过
+            if currentModel.score != JudegeScore.judegeScoreZero {
+                return
+            }
+            
+            var selectedIndexPath = IndexPath(item: 0, section: 0)
+            for (index, selectedModel) in dataArray.enumerated() {
+                
+                if selectedModel.isSelectedCell {
+                    selectedIndexPath = IndexPath(item: index, section: 0)
+                    
+                    if selectedIndexPath == indexPath {
+                        return
+                    }else{
+                        selectedModel.isSelectedCell = false
+                    }
+                    break
+                }
+            }
+            
+            var reloadArray = [indexPath, selectedIndexPath]
+            if indexPath == selectedIndexPath, indexPath.item == 0 {
+                reloadArray = [indexPath]
+            }
+            
+            currentModel.isSelectedCell = true
+            
+            collectionView.reloadItems(at: reloadArray)
+        }
     }
-    
 }
 
 // MARK: - maskView代理
