@@ -31,6 +31,8 @@ class LLCourseManageRightCell: UITableViewCell {
     @IBOutlet weak var phoneLabel: UILabel!
     /// 点击按钮
     @IBOutlet weak var signBtn: UIButton!
+    /// 评价按钮
+    @IBOutlet weak var judgeBtn: UIButton!
     
     /// 数据源
     var model: LLCourseChildModel?{
@@ -38,6 +40,7 @@ class LLCourseManageRightCell: UITableViewCell {
         didSet{
         
             if let imageURL = model?.headPortrait {
+                
                 let urlStr = URL(string: imageURL)
                 headImageView.sd_setImage(with: urlStr, completed: nil)
             }else{
@@ -88,6 +91,12 @@ class LLCourseManageRightCell: UITableViewCell {
     
     // MARK: - 点击事件
     
+    /// 评价按钮点击
+    @IBAction func judgeBtnClick() {
+        
+        getTeacherJudgeChildData()
+    }
+    
     /// 按钮点击
     @IBAction func signBtnClick() {
         
@@ -101,13 +110,8 @@ class LLCourseManageRightCell: UITableViewCell {
                 
             case .signTypeSignOut:
                 
-               let view = LLInputAlertView.loadViewFfromNib(delegate: self, viewtype: .viewTypeCancelSignout)
-                view.courseModel = model
-                
-            case .signTypeNoSignin:
-                
-                getTeacherJudgeChildData()
-                
+                LLInputAlertView.loadViewFfromNib(delegate: self, viewtype: .viewTypeCancelSignout).courseModel = model
+               
             default: break
             }
         }

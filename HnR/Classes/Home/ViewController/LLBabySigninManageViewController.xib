@@ -24,23 +24,9 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPadCopy" translatesAutoresizingMaskIntoConstraints="NO" id="yMR-Tu-JGM">
-                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                </imageView>
-            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="yMR-Tu-JGM" secondAttribute="bottom" id="0xo-47-ldS"/>
-                <constraint firstItem="yMR-Tu-JGM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AfQ-BG-2De"/>
-                <constraint firstAttribute="trailing" secondItem="yMR-Tu-JGM" secondAttribute="trailing" id="Gvh-ym-soW"/>
-                <constraint firstItem="yMR-Tu-JGM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ymB-hM-aN5"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
-    <resources>
-        <image name="iPadCopy" width="1024" height="768"/>
-    </resources>
 </document>

@@ -50,8 +50,30 @@
                         <color key="textColor" red="0.70196078431372544" green="0.72941176470588232" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_course_manage_wait_icon" translatesAutoresizingMaskIntoConstraints="NO" id="IJK-mC-HNT">
+                        <rect key="frame" x="37" y="37" width="23" height="23"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWI-Is-sFN">
+                        <rect key="frame" x="560" y="49" width="115" height="51"/>
+                        <color key="backgroundColor" red="0.45098039215686275" green="0.85098039215686272" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="115" id="4OT-fQ-K6z"/>
+                            <constraint firstAttribute="height" constant="51" id="WSB-HH-fUB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <state key="normal" title="评价"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <real key="value" value="25.5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="judgeBtnClick" destination="KGk-i7-Jjw" eventType="touchUpInside" id="YWr-aL-u1P"/>
+                        </connections>
+                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veC-pn-pRr">
-                        <rect key="frame" x="528" y="48.5" width="115" height="51"/>
+                        <rect key="frame" x="425" y="49" width="115" height="51"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="115" id="Nfl-Lz-TmW"/>
                             <constraint firstAttribute="height" constant="51" id="PzB-0m-hSm"/>
@@ -66,18 +88,17 @@
                             <action selector="signBtnClick" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hG4-b5-9eg"/>
                         </connections>
                     </button>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_course_manage_wait_icon" translatesAutoresizingMaskIntoConstraints="NO" id="IJK-mC-HNT">
-                        <rect key="frame" x="37" y="37" width="23" height="23"/>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="IJK-mC-HNT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="8wD-rg-dBq"/>
                     <constraint firstItem="Oiv-k8-2BD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="Fba-Dc-q6H"/>
+                    <constraint firstItem="hWI-Is-sFN" firstAttribute="leading" secondItem="veC-pn-pRr" secondAttribute="trailing" constant="20" id="GDe-ez-unt"/>
                     <constraint firstItem="jF3-8z-d4c" firstAttribute="top" secondItem="Oiv-k8-2BD" secondAttribute="bottom" constant="20" id="MRV-1X-x9l"/>
-                    <constraint firstAttribute="trailing" secondItem="veC-pn-pRr" secondAttribute="trailing" constant="57" id="ajo-IH-y8R"/>
                     <constraint firstItem="K3J-oz-kI5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="37" id="i3p-Dh-yFG"/>
                     <constraint firstItem="jF3-8z-d4c" firstAttribute="leading" secondItem="K3J-oz-kI5" secondAttribute="trailing" constant="20" id="jGc-jf-aRq"/>
                     <constraint firstItem="IJK-mC-HNT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="37" id="pV9-tQ-xHU"/>
+                    <constraint firstAttribute="trailing" secondItem="hWI-Is-sFN" secondAttribute="trailing" constant="25" id="qO0-qO-4P1"/>
+                    <constraint firstItem="hWI-Is-sFN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="sGd-rt-I6R"/>
                     <constraint firstItem="veC-pn-pRr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vEM-yb-Iac"/>
                     <constraint firstItem="K3J-oz-kI5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="wvB-t7-Ihz"/>
                     <constraint firstItem="Oiv-k8-2BD" firstAttribute="leading" secondItem="K3J-oz-kI5" secondAttribute="trailing" constant="20" id="yIb-Z6-8P8"/>
@@ -86,11 +107,12 @@
             <connections>
                 <outlet property="flagImageView" destination="IJK-mC-HNT" id="kfa-Ak-GOu"/>
                 <outlet property="headImageView" destination="K3J-oz-kI5" id="SBl-xW-Duz"/>
+                <outlet property="judgeBtn" destination="hWI-Is-sFN" id="nkW-Os-8vo"/>
                 <outlet property="nameLabel" destination="Oiv-k8-2BD" id="KxL-MB-Z19"/>
                 <outlet property="phoneLabel" destination="jF3-8z-d4c" id="a3m-9F-TwP"/>
                 <outlet property="signBtn" destination="veC-pn-pRr" id="uzr-ef-cui"/>
             </connections>
-            <point key="canvasLocation" x="349" y="-116"/>
+            <point key="canvasLocation" x="-232" y="-132"/>
         </tableViewCell>
     </objects>
     <resources>
