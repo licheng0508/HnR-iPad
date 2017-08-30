@@ -47,6 +47,12 @@ class LLBabyJudgeCardCell: UICollectionViewCell {
     
     // MARK: - 按钮点击
     
+    /// flag按钮点击
+    @IBAction func flagBtnClick() {
+        
+        addChildLessonJudge(score: .judegeScoreZero)
+    }
+    
     /// 加一按钮点击
     @IBAction func addOneBtnClick() {
         

@@ -157,7 +157,7 @@ class HnRNetWorkTool {
     /// 添加孩子课堂表现接口
     class func getAddChiledLessonJudgeData(parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : LLSignWayModel) -> ()) {
         
-        let urlStr = "chain/lesson/growth/add"
+        let urlStr = "chain/lesson/growth/update"
         
         ALFTool.postRequestData(hubtype: true, isloading: true, urlstring: urlStr, parameters: parameters) { (JsonModel) in
             

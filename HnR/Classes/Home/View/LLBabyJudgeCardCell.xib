@@ -49,6 +49,9 @@
                                 <integer key="value" value="24"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="flagBtnClick" destination="gTV-IL-0wX" eventType="touchUpInside" id="FeJ-b9-cxh"/>
+                        </connections>
                     </button>
                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDk-xs-Zca">
                         <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
