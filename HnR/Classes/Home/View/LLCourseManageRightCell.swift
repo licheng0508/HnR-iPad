@@ -52,6 +52,8 @@ class LLCourseManageRightCell: UITableViewCell {
             
             flagImageView.isHidden = true
             
+            changeJudgeBtnTitle()
+            
             if let signType = model?.signType {
                 
                 switch signType {
@@ -119,6 +121,12 @@ class LLCourseManageRightCell: UITableViewCell {
     
     // MARK: - 公共方法
     
+    /// 更改评价按钮title
+    func changeJudgeBtnTitle() {
+        let judgeTitle = (model?.isCommented)! ? "已评价" : "评价"
+        judgeBtn.setTitle(judgeTitle, for: UIControlState.normal)
+    }
+    
     // MARK: - 私有方法
     private func getTeacherJudgeChildData() {
         
@@ -132,7 +140,7 @@ class LLCourseManageRightCell: UITableViewCell {
         
         HnRNetWorkTool.getTeacherJudgeListData(parameters: paramsDic) { (result) in
             
-            LLBabyJudgeCardView.loadViewFfromNib(usercoursrid: userCourseId).model = result
+            LLBabyJudgeCardView.loadViewFfromNib(delegate: self, coursechildmodel: self.model).model = result
         }
     }
     
@@ -142,6 +150,8 @@ class LLCourseManageRightCell: UITableViewCell {
         guard let childId = model?.childId, let startTime = model?.startTime else {
             return
         }
+        
+        LLPrint(childId)
         
         let paramsDic = ["userId": UserAccount.getUserAccountUserId(),
                          "type": "2",
@@ -159,6 +169,15 @@ class LLCourseManageRightCell: UITableViewCell {
                 self.myDelegate?.courseManageRightCellClickSucess(self, message: "签出成功")
             }
         }
+    }
+}
+
+// MARK: - LLBabyJudgeCardViewDelegate
+extension LLCourseManageRightCell: LLBabyJudgeCardViewDelegate
+{
+    func babyJudgeCardViewChangeStatus(_ view: LLBabyJudgeCardView) {
+        
+        changeJudgeBtnTitle()
     }
 }
 

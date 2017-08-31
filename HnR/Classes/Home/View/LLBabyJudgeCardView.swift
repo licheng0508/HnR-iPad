@@ -8,14 +8,23 @@
 
 import UIKit
 
+/// 代理
+protocol LLBabyJudgeCardViewDelegate: NSObjectProtocol{
+    
+    func babyJudgeCardViewChangeStatus(_ view: LLBabyJudgeCardView)
+}
+
 class LLBabyJudgeCardView: UIView {
     
     // MARK: - 变量
     
+    /// LLBabyJudgeCardViewDelegate
+    weak var myDelegate: LLBabyJudgeCardViewDelegate?
+    
     /// collectionView
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var userCourseId: String?
+    var courseChildModel: LLCourseChildModel?
     
     /// cellID
     let Baby_Judge_Card_Cell = "LLBabyJudgeCardCell"
@@ -38,6 +47,7 @@ class LLBabyJudgeCardView: UIView {
     
     
     // MARK: - 重写方法
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -55,6 +65,27 @@ class LLBabyJudgeCardView: UIView {
         setupView()
     }
 
+    // MARK: - 公共方法
+    func changeJudgeViewStatus() {
+        
+        if let dataArray = model?.childGrowthRecordList {
+        
+            var isJudge = false
+            for currentModel in dataArray {
+                if currentModel.score != JudegeScore.judegeScoreZero {// 有评价
+                    isJudge = true
+                    break
+                }
+            }
+            if courseChildModel?.isCommented != isJudge {
+                courseChildModel?.isCommented = isJudge
+                myDelegate?.babyJudgeCardViewChangeStatus(self)
+            }
+        }
+    }
+    
+    // MARK: - 私有方法
+    
     /// 初始化view
     private func setupView(){
         
@@ -79,11 +110,12 @@ class LLBabyJudgeCardView: UIView {
     // MARK: - 外部调用方法
     
     /// load view from xib
-    class func loadViewFfromNib(usercoursrid: String) -> LLBabyJudgeCardView {
+    class func loadViewFfromNib(delegate: LLBabyJudgeCardViewDelegate, coursechildmodel: LLCourseChildModel?) -> LLBabyJudgeCardView {
         
         let nib = UINib(nibName: "LLBabyJudgeCardView", bundle: nil)
         let view = nib.instantiate(withOwner: self, options: nil).first as! LLBabyJudgeCardView
-        view.userCourseId = usercoursrid
+        view.courseChildModel = coursechildmodel
+        view.myDelegate = delegate
         return view
     }
 
@@ -105,7 +137,7 @@ extension LLBabyJudgeCardView: UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Baby_Judge_Card_Cell, for: indexPath) as! LLBabyJudgeCardCell
         
         cell.model = model?.childGrowthRecordList?[indexPath.item]
-        cell.userCourseId = userCourseId
+        cell.userCourseId = courseChildModel?.userCourseId
         
         return cell
     }
@@ -155,6 +187,7 @@ extension LLBabyJudgeCardView: LLMaskViewDelegate
         
         view.removeFromSuperview()
         self.removeFromSuperview()
+        changeJudgeViewStatus()
     }
 }
 

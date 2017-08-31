@@ -38,6 +38,9 @@ class LLCourseChildModel: HandyJSON {
     /// 是否显示标志
     var isWaited: Bool = false
     
+    /// 是否评价
+    var isCommented: Bool = false
+    
     /// 签到类型 0、未签到 1、已签到 2、已签出 99、全部
     var signType: SignType?
     

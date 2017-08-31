@@ -77,8 +77,9 @@ class HnRNetWorkTool {
             if let result = LLSignWayModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 
                 finishedCallback(result)
+            }else{
+                finishedCallback(nil)
             }
-            finishedCallback(nil)
         }
     }
     
@@ -92,8 +93,9 @@ class HnRNetWorkTool {
             if let result = LLSignWayModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 
                 finishedCallback(result)
+            }else{
+                finishedCallback(nil)
             }
-            finishedCallback(nil)
         }
     }
     
@@ -107,8 +109,9 @@ class HnRNetWorkTool {
             if let result = LLSignWayModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 
                 finishedCallback(result)
+            }else{
+                finishedCallback(nil)
             }
-            finishedCallback(nil)
         }
     }
     
