@@ -17,14 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //注册监听
-        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.changeRootViewController), name: NSNotification.Name(rawValue: Switch_Root_VC), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.defaultViewController), name: NSNotification.Name(rawValue: Switch_Root_VC), object: nil)
         
         //初始化Window
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         
-        window?.rootViewController = defaultViewController()
-        window?.makeKeyAndVisible()
+        defaultViewController()
         
         return true
     }
@@ -58,26 +57,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     
-    /// 切换根控制器
-    func changeRootViewController()
+    /// 用于返回默认界面
+    func defaultViewController()
     {
-        window?.rootViewController = homeRootController()
+        if UserAccount.isLogin() {//主界面
+            window?.rootViewController = LLNavigationController(rootViewController: LLHomeViewController(nibName: "LLHomeViewController", bundle: nil))
+        }else {//登录界面
+            window?.rootViewController = LLUserLoginViewController(nibName: "LLUserLoginViewController", bundle: nil)
+        }
         window?.makeKeyAndVisible()
     }
-    /// 用于返回默认界面
-    func defaultViewController() -> UIViewController
-    {
-        if UserAccount.isLogin() {
-            return homeRootController()
-        }
-        return LLUserLoginViewController(nibName: "LLUserLoginViewController", bundle: nil)
-    }
-    
-    /// 主界面
-    private func homeRootController() -> UIViewController {
-        return LLNavigationController(rootViewController: LLHomeViewController(nibName: "LLHomeViewController", bundle: nil))
-    }
-    
 }
 
 

@@ -53,6 +53,15 @@ class LLHomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - 按钮点击
+    
+    /// 退出按钮点击
+    @IBAction func exitBtnClick() {
+        
+        UserAccount.saveUserAccount(status: false)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Switch_Root_VC), object: nil)
+    }
+    
     // MARK: - 私有方法
     
     /// 获取首页数据

@@ -52,10 +52,26 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeX-0A-pfk">
+                    <rect key="frame" x="944" y="200" width="60" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="5S8-7R-v2H"/>
+                        <constraint firstAttribute="width" constant="60" id="KKv-Yd-trg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="退出">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="exitBtnClick" destination="-1" eventType="touchUpInside" id="grT-HV-LBa"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="LLI-wd-8vK" firstAttribute="top" secondItem="eeX-0A-pfk" secondAttribute="bottom" constant="20" id="388-Pt-3zu"/>
                 <constraint firstAttribute="bottom" secondItem="LLI-wd-8vK" secondAttribute="bottom" id="7wH-yk-I3j"/>
+                <constraint firstAttribute="trailing" secondItem="eeX-0A-pfk" secondAttribute="trailing" constant="20" id="D6t-a1-j5T"/>
                 <constraint firstAttribute="trailing" secondItem="LLI-wd-8vK" secondAttribute="trailing" id="NDU-cO-hts"/>
                 <constraint firstItem="OKZ-Oe-m61" firstAttribute="leading" secondItem="yHn-pb-md1" secondAttribute="leading" constant="44" id="ONU-wS-uh9"/>
                 <constraint firstItem="oWQ-Al-uYI" firstAttribute="leading" secondItem="yHn-pb-md1" secondAttribute="leading" id="Pcd-mT-HXi"/>
@@ -66,7 +82,7 @@
                 <constraint firstItem="OKZ-Oe-m61" firstAttribute="top" secondItem="yHn-pb-md1" secondAttribute="top" constant="50" id="kWO-Mx-TJI"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-586" y="-738"/>
+            <point key="canvasLocation" x="-884" y="-783"/>
         </view>
     </objects>
     <resources>
