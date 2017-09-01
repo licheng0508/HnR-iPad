@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 enum SequenceType: Int, HandyJSONEnum {
     
     /// 签到管理
