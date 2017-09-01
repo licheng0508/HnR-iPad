@@ -96,7 +96,18 @@ class LLCourseManageRightCell: UITableViewCell {
     /// 评价按钮点击
     @IBAction func judgeBtnClick() {
         
-        getTeacherJudgeChildData()
+        if let signType = model?.signType {
+            
+            switch signType {
+            case .signTypeNoSignin:
+                // 未签到
+                MBProgressHUDShowText("这位小朋友还没有到店哦\n暂时不能进行课堂表现评价")
+            case .signTypeSignin, .signTypeSignOut:
+                // 评价
+                getTeacherJudgeChildData()
+            default: break
+            }
+        }
     }
     
     /// 按钮点击
