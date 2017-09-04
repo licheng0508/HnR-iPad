@@ -83,6 +83,8 @@ class LLCourseManageRightCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        judgeBtn.backgroundColor = UIColorWithRed(115, green: 217, blue: 167)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
