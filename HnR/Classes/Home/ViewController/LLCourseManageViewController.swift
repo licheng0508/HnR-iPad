@@ -11,6 +11,7 @@ import UIKit
 class LLCourseManageViewController: UIViewController {
 
     // MARK: - 变量
+    
     /// 头部刷选
     @IBOutlet weak var collectionView: UICollectionView!
     /// 左边tableview
