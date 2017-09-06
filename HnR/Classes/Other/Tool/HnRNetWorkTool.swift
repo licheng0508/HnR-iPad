@@ -116,7 +116,7 @@ class HnRNetWorkTool {
     }
     
     /// 获取课程签到列表数据
-    class func getCourseSignInListData(parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : LLCourseSigninListModel) -> ()) {
+    class func getCourseSignInListData(parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : LLCourseSigninListModel?) -> ()) {
         
         let urlStr = "chain/sign/course/list"
         
@@ -125,6 +125,8 @@ class HnRNetWorkTool {
             if let result = LLCourseSigninListModel.deserialize(from: JSON(JsonModel.object as Any).rawString()){
                 
                 finishedCallback(result)
+            }else{
+                finishedCallback(nil)
             }
         }
     }

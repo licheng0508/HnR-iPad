@@ -68,6 +68,9 @@ class LLCourseManageViewController: UIViewController {
         
         // 默认选中第一个
         collectionView.selectItem(at: headSelectedIndexPath, animated: true, scrollPosition: UICollectionViewScrollPosition.left)
+        
+        //添加刷新控件
+        leftTableView.mj_header = MJRefreshHeaderTool.headerWithRefreshingTarget(target: self, action: #selector(getLeftListData))
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,23 +100,30 @@ class LLCourseManageViewController: UIViewController {
         rightTableView.register(rightCellNib, forCellReuseIdentifier: Course_Manage_Right_Cell)
     }
     
+    // MARK: - 公共方法
+    
     /// 获取左边列表数据
-    private func getLeftListData() {
+    func getLeftListData() {
         
         let paramsDic = ["userId" : UserAccount.getUserAccountUserId()]
         
         HnRNetWorkTool.getCourseSignInListData(parameters: paramsDic) { (result) in
             
-            self.leftDataArray = result.signList
+            //停止刷新
+            self.leftTableView.mj_header.endRefreshing()
+            
+            guard result != nil else{
+                return
+            }
+            
+            self.leftDataArray = result?.signList
             // 默认选中第一个
             self.leftTableView.selectRow(at: self.leftSelectedIndexPath, animated: true, scrollPosition: UITableViewScrollPosition.top)
             // 获取右边列表数据
             self.getRightListData()
         }
     }
-    
-    // MARK: - 公共方法
-    
+
     /// 获取右边列表数据
     func getRightListData(_ message: String? = nil) {
         

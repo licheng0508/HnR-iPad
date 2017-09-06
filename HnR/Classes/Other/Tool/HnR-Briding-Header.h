@@ -11,5 +11,6 @@
 
 #import "MBProgressHUD.h"
 #import "UIImageView+WebCache.h"
+#import "MJRefresh.h"
 
 #endif /* HnR_Briding_Header_h */
