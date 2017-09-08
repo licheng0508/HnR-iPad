@@ -15,7 +15,6 @@ class LLBabySigninManageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        LLPrint("test")
     }
 
     override func didReceiveMemoryWarning() {

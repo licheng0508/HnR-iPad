@@ -18,7 +18,6 @@ class LLSigninManageViewController: UIViewController {
     /// cellId
     let Signin_Manage_List_Cell = "LLSigninManageListCell"
     
-
     /// 数据源
     var dataArray: [LLSigninModel]?{
     
@@ -55,7 +54,6 @@ class LLSigninManageViewController: UIViewController {
         //获取数据
         getSignListData("刷新成功")
     }
-    
     
     /// 退出界面
     @IBAction func backBtnClick(_ sender: UIButton) {
