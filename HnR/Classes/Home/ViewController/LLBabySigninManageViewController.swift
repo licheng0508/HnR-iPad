@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class LLBabySigninManageViewController: UIViewController {
 
@@ -15,6 +16,18 @@ class LLBabySigninManageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+    }
+    
+    /// 朗读
+    func playBtnClick() {
+        
+        let avSound = AVSpeechSynthesizer()
+        
+        let utterance = AVSpeechUtterance(string: "锦瑟无端五十弦， 一弦一柱思华年。")
+        utterance.rate = 0.5
+        utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
+        
+        avSound.speak(utterance)
     }
 
     override func didReceiveMemoryWarning() {
