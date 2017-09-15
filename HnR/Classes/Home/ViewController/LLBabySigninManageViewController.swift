@@ -16,6 +16,7 @@ class LLBabySigninManageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        playBtnClick()
     }
     
     /// 朗读
