@@ -24,7 +24,7 @@ class LLMaskView: UIView {
         super.init(frame: frame)
         
         // 背景颜色
-        self.backgroundColor = UIColor.init(colorLiteralRed: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.3)
+        self.backgroundColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.3)
         
         // 添加点击事件
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapClick))

@@ -42,7 +42,7 @@ class LLBabyJudgeCardCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        bgView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.3)
+        bgView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.3)
     }
     
     // MARK: - 按钮点击

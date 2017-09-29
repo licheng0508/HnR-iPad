@@ -43,5 +43,5 @@ func getMainScreenHeight() -> CGFloat {
 /// 返回颜色
 func UIColorWithRed(_ red: Float, green: Float, blue: Float, alpha: Float? = 1.0) -> UIColor {
 
-    return UIColor.init(colorLiteralRed: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha!)
+    return UIColor(red: CGFloat(red/255.0), green: CGFloat(green/255.0), blue: CGFloat(blue/255.0), alpha: CGFloat(alpha!))
 }
