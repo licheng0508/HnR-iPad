@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     /// 用于返回默认界面
-    func defaultViewController()
+    @objc func defaultViewController()
     {
         if UserAccount.isLogin() {//主界面
             window?.rootViewController = LLNavigationController(rootViewController: LLHomeViewController(nibName: "LLHomeViewController", bundle: nil))

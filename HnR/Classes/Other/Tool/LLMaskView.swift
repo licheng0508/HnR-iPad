@@ -45,7 +45,7 @@ class LLMaskView: UIView {
     
     // MARK: - 页面点击
     /// 点击view
-    func tapClick(){
+    @objc func tapClick(){
         
        myDelegate?.maskViewClick(self)
     

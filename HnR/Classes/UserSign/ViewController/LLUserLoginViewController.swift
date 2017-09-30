@@ -161,7 +161,7 @@ class LLUserLoginViewController: UIViewController {
     // MARK: - 公共方法
     
     /// 计时器
-    func codeTimer() {
+    @objc func codeTimer() {
         
         codeTime = codeTime - 1
         
@@ -178,7 +178,7 @@ class LLUserLoginViewController: UIViewController {
     }
     
     // 键盘出现
-    func keyboardWillShow(note: NSNotification) {
+    @objc func keyboardWillShow(note: NSNotification) {
         let userInfo = note.userInfo!
         let  keyBoardBounds = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
@@ -202,7 +202,7 @@ class LLUserLoginViewController: UIViewController {
     }
     
     // 键盘隐藏
-    func keyboardWillHidden(note: NSNotification) {
+    @objc func keyboardWillHidden(note: NSNotification) {
         
         let userInfo  = note.userInfo!
         let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue

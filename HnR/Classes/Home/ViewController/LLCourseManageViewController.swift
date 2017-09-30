@@ -103,7 +103,7 @@ class LLCourseManageViewController: UIViewController {
     // MARK: - 公共方法
     
     /// 获取左边列表数据
-    func getLeftListData() {
+    @objc func getLeftListData() {
         
         let paramsDic = ["userId" : UserAccount.getUserAccountUserId()]
         

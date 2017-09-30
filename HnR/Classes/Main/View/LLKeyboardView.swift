@@ -44,7 +44,7 @@ class LLKeyboardView: UIView {
     // MARK: - 公共方法
 
     // 键盘出现
-    func keyboardWillShow(note: NSNotification) {
+    @objc func keyboardWillShow(note: NSNotification) {
         let userInfo = note.userInfo!
         let  keyBoardBounds = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
@@ -67,7 +67,7 @@ class LLKeyboardView: UIView {
     }
     
     // 键盘隐藏
-    func keyboardWillHidden(note: NSNotification) {
+    @objc func keyboardWillHidden(note: NSNotification) {
         
         let userInfo  = note.userInfo!
         let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
