@@ -141,6 +141,7 @@ extension LLInputCodeView: UITextFieldDelegate
             }else{
                 
                 password = password.substring(to: password.index(password.startIndex, offsetBy: password.characters.count - 1))
+                
             }
             
             changeCodeString(codestring: string)
