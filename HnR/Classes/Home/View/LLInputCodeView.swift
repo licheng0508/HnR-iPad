@@ -55,7 +55,7 @@ class LLInputCodeView: UIView {
         
         for (index, label) in squareArray.enumerated() {
             
-            if index == password.characters.count {
+            if index == password.count {
                 label.text = codestring
                 break
             }
@@ -136,12 +136,15 @@ extension LLInputCodeView: UITextFieldDelegate
         if string == "" {
             if password == ""{// 密码已经为空
                 return true
-            }else if password.characters.count == 1{
+            }else if password.count == 1{
                 password = ""
             }else{
                 
-                password = password.substring(to: password.index(password.startIndex, offsetBy: password.characters.count - 1))
+                let index = password.index(password.startIndex, offsetBy: password.count - 1)
                 
+//                password = password.substring(to: password.index(password.startIndex, offsetBy: password.characters.count - 1))
+                
+                password = String(password[..<index])
             }
             
             changeCodeString(codestring: string)
@@ -153,7 +156,7 @@ extension LLInputCodeView: UITextFieldDelegate
         }
         
         // 完成输入
-        if password.characters.count >= lenght {
+        if password.count >= lenght {
             textField.resignFirstResponder
             textField.text = password
             self.myDelegate?.inputCodeSuccessView(self, password: password)
