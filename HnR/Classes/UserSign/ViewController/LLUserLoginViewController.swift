@@ -85,7 +85,7 @@ class LLUserLoginViewController: UIViewController {
             return
         }
         
-        if phoneNum.characters.count == 0 {
+        if phoneNum.count == 0 {
             MBProgressHUDShowText("请输入手机号")
             return
         }
@@ -97,7 +97,7 @@ class LLUserLoginViewController: UIViewController {
         guard let codeNum = codeText.text else {
             return
         }
-        if codeNum.characters.count == 0 {
+        if codeNum.count == 0 {
             MBProgressHUDShowText("请输入验证码")
             return
         }
@@ -127,7 +127,7 @@ class LLUserLoginViewController: UIViewController {
         guard let phoneNum = phoneText.text else {
             return
         }
-        if phoneNum.characters.count == 0 {
+        if phoneNum.count == 0 {
             MBProgressHUDShowText("请输入手机号")
             return
         }

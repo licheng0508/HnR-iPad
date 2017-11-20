@@ -98,7 +98,7 @@ class LLInputAlertView: LLKeyboardView {
         guard let passWord = inputPassWordText.text else {
             return
         }
-        if passWord.characters.count == 0 {//没有输入密码
+        if passWord.count == 0 {//没有输入密码
             return
         }
         // 收起键盘

@@ -14,7 +14,7 @@ extension String
     /// 当前字符串是否是手机号
     func isPhoneNum() -> Bool {
         
-        if self.hasPrefix("1") && self.characters.count == 11 {
+        if self.hasPrefix("1") && self.count == 11 {
             return self.isNumber()
         }
         return false
